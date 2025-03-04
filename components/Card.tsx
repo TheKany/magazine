@@ -7,24 +7,49 @@ type Props = {
 };
 
 const Card = ({ season }: Props) => {
-  return (
-    <Container href={`/Story/season${season}`}>
-      <Image
-        src={`/img/s${season}/mvp.png`}
-        alt={`${season}시즌 mvp`}
-        width={400}
-        height={530}
-        layout="responsive"
-      />
+  switch (season) {
+    case "1":
+      return (
+        <DivContainer>
+          <Image
+            src={`/img/s${season}/mvp.png`}
+            alt={`${season}시즌 mvp`}
+            width={400}
+            height={530}
+            layout="responsive"
+          />
 
-      <Title>식서스 시즌 {season} 호</Title>
-    </Container>
-  );
+          <Title>식서스 시즌 {season} 호</Title>
+        </DivContainer>
+      );
+
+    default:
+      return (
+        <Container href={`/Story/season${season}`}>
+          <Image
+            src={`/img/s${season}/mvp.png`}
+            alt={`${season}시즌 mvp`}
+            width={400}
+            height={530}
+            layout="responsive"
+          />
+
+          <Title>식서스 시즌 {season} 호</Title>
+        </Container>
+      );
+  }
 };
 
 export default Card;
 
 const Container = styled.a`
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+`;
+
+const DivContainer = styled.a`
   display: block;
   width: 100%;
   height: 100%;
