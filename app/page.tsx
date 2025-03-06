@@ -12,7 +12,7 @@ export default function Home() {
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4000,
     cssEase: "linear",
   };
 
