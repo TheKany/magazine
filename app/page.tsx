@@ -1,27 +1,26 @@
 "use client";
 
 import MainLink from "@/components/Button/MainLink";
-// import Image from "next/image";
-// import Slider from "react-slick";
+import Image from "next/image";
+import Slider from "react-slick";
 import styled from "styled-components";
 
 export default function Home() {
-  // const settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  //   autoplay: true,
-  //   speed: 2000,
-  //   autoplaySpeed: 5000,
-  //   cssEase: "linear",
-  // };
+  const settings = {
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 3000,
+    cssEase: "linear",
+  };
 
   return (
     <>
-      {/* <Banner>
+      <Banner>
         <Slider {...settings}>
-          {Array.from({ length: 2 }).map((_, idx) => {
+          {Array.from({ length: 5 }).map((_, idx) => {
             return (
               <div key={idx}>
                 <Image
@@ -35,7 +34,7 @@ export default function Home() {
             );
           })}
         </Slider>
-      </Banner> */}
+      </Banner>
 
       <LinkList>
         <MainLink
@@ -71,12 +70,7 @@ export default function Home() {
   );
 }
 
-// const Banner = styled.div`
-//   position: absolute;
-//   width: 100%;
-//   top: 0;
-//   left: 0;
-// `;
+const Banner = styled.div``;
 
 const LinkList = styled.div`
   width: 100%;
