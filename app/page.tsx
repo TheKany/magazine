@@ -1,21 +1,53 @@
 "use client";
 
-import Card from "@/components/Card";
-import CardContainer from "@/components/CardContainer";
-import Title from "@/components/Title";
-import Wrapper from "@/components/Wrapper";
+import MainLink from "@/components/Button/MainLink";
+import styled from "styled-components";
 
 export default function Home() {
   return (
-    <Wrapper>
-      <Title />
+    <>
+      <LinkList>
+        <MainLink url="/Rules" title="식서스 회칙" subtitle="Sixers Rules" />
+        <MainLink url="/News" title="식서스 뉴스" subtitle="Sixers News" />
+      </LinkList>
 
-      <CardContainer>
-        <Card season="1" />
-        <Card season="2" />
-        <Card season="3" />
-        <Card season="4" />
-      </CardContainer>
-    </Wrapper>
+      <LinkListGrid>
+        <MainLink
+          url="/Leaders"
+          title="식서스 팀장"
+          subtitle="Sixers Season Leaders"
+        />
+        <MainLink
+          url="/Calendar"
+          title="식서스 일정"
+          subtitle="Sixers Schedule"
+        />
+      </LinkListGrid>
+
+      <LinkList>
+        <MainLink
+          url="/Story"
+          title="식서스 매거진"
+          subtitle="Sixers Magazine"
+        />
+      </LinkList>
+    </>
   );
 }
+
+const LinkList = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 24px 0;
+`;
+
+const LinkListGrid = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+`;

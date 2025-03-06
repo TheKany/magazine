@@ -9,7 +9,7 @@ const Title = () => {
   return (
     <Container>
       <Link href={"/"}>
-        <Image src={"/title.svg"} alt="타이틀" width={200} height={110} />
+        <Image src={"/title.png"} alt="타이틀" width={222} height={132} />
       </Link>
     </Container>
   );
@@ -22,4 +22,5 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 24px;
 `;

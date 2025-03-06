@@ -1,6 +1,4 @@
-import Back from "@/components/Back";
-import Title from "@/components/Title";
-import Wrapper from "@/components/Wrapper";
+import Back from "@/components/Button/Back";
 import React from "react";
 
 type Props = {
@@ -9,11 +7,10 @@ type Props = {
 
 const layout = ({ children }: Props) => {
   return (
-    <Wrapper>
-      <Title />
+    <>
       {children}
       <Back />
-    </Wrapper>
+    </>
   );
 };
 
