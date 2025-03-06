@@ -6,7 +6,7 @@ import styled from "styled-components";
 const Back = () => {
   return (
     <Container>
-      <BackBtn href="/">목록으로</BackBtn>
+      <BackBtn href="/">메인으로</BackBtn>
     </Container>
   );
 };
@@ -25,6 +25,7 @@ const BackBtn = styled.a`
   width: 100px;
   margin: 0 auto;
   padding: 4px;
+  border-radius: 8px;
 
   text-align: center;
   font-size: 14px;
