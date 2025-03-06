@@ -36,7 +36,7 @@ type RuleTextProps = {
 };
 
 export const RuleText = ({ children }: RuleTextProps) => {
-  return <Text>{children}</Text>;
+  return <Text style={{ fontWeight: 700 }}>{children}</Text>;
 };
 
 const TextBox = styled.div`

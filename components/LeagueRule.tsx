@@ -53,7 +53,6 @@ const LeagueRule = () => {
           <RuleListItem>
             팀 파울이 4개 이상이 되면 자유투(1구 2득점 인정)를 실행한다.
           </RuleListItem>
-          <RuleListItem>심판 콜은 번복없이 진행한다.</RuleListItem>
           <RuleListItem>
             유파울(속공 저지 파울, 비신사적인 파울)시 상대편에게 자유투 1구와
             공격권을 부여한다.
@@ -61,6 +60,15 @@ const LeagueRule = () => {
           <RuleListItem>
             선수들의 부상 방지를 위해 의도와 상관없이 과격한 파울을 할 경우 삼심
             합의하에 유파울 부여와 함께 경고 1회, 누전 2회시 퇴장조치를 한다.
+          </RuleListItem>
+          <RuleListItem>심판 콜은 번복없이 진행한다.</RuleListItem>
+          <RuleListItem>
+            경기 중 심판 콜에 대해 과도한 항의 및 상대 팀원에게 불필요한
+            언쟁으로 경기 전체 분위기를 해할 시 테크니컬 파울 부여한다.
+          </RuleListItem>
+          <RuleListItem>
+            위와 같은 사항이 지속적으로 반복될 경우 이유를 불문하고 퇴장 조치를
+            한다.
           </RuleListItem>
         </RuleList>
       </RuleSection>
@@ -125,6 +133,15 @@ const LeagueRule = () => {
           </RuleListItem>
           <RuleListItem>
             [신설] 제 5조 6항) 당일 참석자에 대한 동일 출전 시간 보장 항목
+          </RuleListItem>
+        </RuleList>
+        <RuleText>2025.03.06</RuleText>
+        <RuleList>
+          <RuleListItem>
+            [신설] 제 4조 6항) 경기내 과도한 항의에 대한 조치
+          </RuleListItem>
+          <RuleListItem>
+            [신설] 제 4조 7항) 반복적인 사항에 대한 조치
           </RuleListItem>
         </RuleList>
       </RuleSection>
