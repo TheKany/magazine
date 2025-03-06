@@ -1,6 +1,6 @@
 "use client";
 
-import Card from "@/components/Card";
+import Card from "@/components/Button/Card";
 import CardContainer from "@/components/CardContainer";
 
 import React from "react";

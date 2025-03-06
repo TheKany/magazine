@@ -1,12 +1,12 @@
 :root {
-  --background: #ffffff;
+  --background: #f4f5f7;
   --foreground: #171717;
   --font-noto-sans-kr: "Noto Sans KR", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #ffffff;
+    --background: #f4f5f7;
     --foreground: #171717;
   }
 }
