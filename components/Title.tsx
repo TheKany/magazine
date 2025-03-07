@@ -13,7 +13,14 @@ const Title = () => {
       <Link href={"/"} style={{ position: "relative" }}>
         {pathname !== "/" ? <InfoText>🔽메인으로🔽</InfoText> : null}
 
-        <Image src={"/title.png"} alt="타이틀" width={222} height={132} />
+        <Image
+          src={"/title.png"}
+          alt="타이틀"
+          width={222}
+          height={132}
+          placeholder="blur"
+          blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
+        />
       </Link>
     </Container>
   );

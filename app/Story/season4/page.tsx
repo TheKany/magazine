@@ -25,6 +25,8 @@ const StoryPage = () => {
           width={221}
           height={266}
           layout="responsive"
+          placeholder="blur"
+          blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
         />
       </FirstImg>
 
@@ -164,6 +166,8 @@ const StoryPage = () => {
         width={343}
         height={228}
         layout="responsive"
+        placeholder="blur"
+        blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
       />
       <TextBox>
         <QText>
@@ -207,6 +211,8 @@ const StoryPage = () => {
         height={304}
         layout="responsive"
         style={{ margin: "24px 0" }}
+        placeholder="blur"
+        blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
       />
     </>
   );

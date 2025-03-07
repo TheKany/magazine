@@ -9,7 +9,7 @@ const NewsPage = () => {
   return (
     <>
       <NewsContainer>
-        {Array.from({ length: 9 }).map((_, idx) => {
+        {Array.from({ length: 10 }).map((_, idx) => {
           return (
             <Image
               key={idx}
@@ -18,6 +18,8 @@ const NewsPage = () => {
               width={400}
               height={300}
               layout="responsive"
+              placeholder="blur"
+              blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
             />
           );
         })}

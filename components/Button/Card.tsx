@@ -17,6 +17,8 @@ const Card = ({ season }: Props) => {
             width={400}
             height={530}
             layout="responsive"
+            placeholder="blur"
+            blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
           />
 
           <Title>식서스 시즌 {season} 호</Title>
@@ -32,6 +34,8 @@ const Card = ({ season }: Props) => {
             width={400}
             height={530}
             layout="responsive"
+            placeholder="blur"
+            blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
           />
 
           <Title>식서스 시즌 {season} 호</Title>

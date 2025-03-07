@@ -24,6 +24,8 @@ const StoryPage = () => {
           alt="이미지1"
           width={221}
           height={266}
+          placeholder="blur"
+          blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
         />
       </FirstImg>
 
@@ -111,6 +113,8 @@ const StoryPage = () => {
         width={343}
         height={228}
         layout="responsive"
+        placeholder="blur"
+        blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
       />
       <TextBox>
         <QText>
@@ -131,6 +135,8 @@ const StoryPage = () => {
         width={531}
         height={304}
         layout="responsive"
+        placeholder="blur"
+        blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
       />
     </>
   );

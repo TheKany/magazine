@@ -12,7 +12,7 @@ export default function Home() {
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 3000,
     cssEase: "linear",
   };
 
@@ -20,7 +20,7 @@ export default function Home() {
     <>
       <Banner>
         <Slider {...settings}>
-          {Array.from({ length: 5 }).map((_, idx) => {
+          {Array.from({ length: 6 }).map((_, idx) => {
             return (
               <div key={idx}>
                 <Image
@@ -29,6 +29,8 @@ export default function Home() {
                   width={400}
                   height={300}
                   layout="responsive"
+                  placeholder="blur"
+                  blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
                 />
               </div>
             );
