@@ -15,7 +15,7 @@ type EventProp = {
 const CalendarPage = () => {
   const [currentDate, setCurrentDate] = useState(dayjs());
   const [eventDate, setEventDate] = useState<EventProp[]>([]);
-  const [selectedEventType, setSelectedEventType] = useState<string>("");
+  const [selectedEvent, setSelectedEvent] = useState<EventProp | null>(null);
 
   const startOfMonth = currentDate.startOf("month");
   const endOfMonth = currentDate.endOf("month");
@@ -38,6 +38,11 @@ const CalendarPage = () => {
     }
   };
 
+  const onClickEventDate = (data: EventProp) => {
+    console.log(data);
+    setSelectedEvent(data);
+  };
+
   useEffect(() => {
     onLoadData();
   }, []);
@@ -45,7 +50,8 @@ const CalendarPage = () => {
   return (
     <>
       <EventDisplay>
-        <p>{selectedEventType}</p>
+        <EventDate>{selectedEvent?.date}</EventDate>
+        <EventComment>{selectedEvent?.comment}</EventComment>
       </EventDisplay>
 
       <CalendarContainer>
@@ -72,13 +78,12 @@ const CalendarPage = () => {
               currentDate.format("YYYY-MM-") + String(day).padStart(2, "0");
             const event = eventDate.find((e) => e.date === dateKey);
             const eventType = event ? event.type : undefined;
-            const eventComment = event ? event.comment : undefined;
 
             return (
               <Day
                 key={day}
                 $eventType={eventType}
-                onClick={() => setSelectedEventType(eventComment || "")}
+                onClick={() => onClickEventDate(event as EventProp)}
               >
                 {day}
               </Day>
@@ -164,11 +169,21 @@ const Day = styled.div<{ $eventType?: string }>`
 `;
 
 const EventDisplay = styled.div`
-  height: 40px;
+  min-height: 50px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 16px;
-  font-size: 16px;
-  font-weight: bold;
+  background-color: #fff;
+  padding: 4px;
+`;
+
+const EventDate = styled.p`
+  font-size: 14px;
+`;
+
+const EventComment = styled.p`
+  font-size: 24px;
+  font-weight: 700;
 `;
