@@ -1,7 +1,6 @@
 "use client";
 
 import AccordionBox from "@/components/Accordion";
-import Back from "@/components/Button/Back";
 import React from "react";
 import styled from "styled-components";
 
@@ -16,8 +15,6 @@ const NoticePage = () => {
         <Text>운영진의 안내에 따라 10일까지 입금 부탁드립니다.</Text>
         <Text>개인사정이 있으실 경우, 따로 연락 부탁드립니다.</Text>
       </AccordionBox>
-
-      <Back />
     </>
   );
 };

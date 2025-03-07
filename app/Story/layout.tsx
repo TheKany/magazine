@@ -1,4 +1,3 @@
-import Back from "@/components/Button/Back";
 import React from "react";
 
 type Props = {
@@ -6,12 +5,7 @@ type Props = {
 };
 
 const layout = ({ children }: Props) => {
-  return (
-    <>
-      {children}
-      <Back />
-    </>
-  );
+  return <>{children}</>;
 };
 
 export default layout;

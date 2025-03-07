@@ -6,6 +6,7 @@ import Wrapper from "@/components/Wrapper";
 import "./globals.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Navigation from "@/components/Navigation";
 
 const notoSansKR = Noto_Sans_KR({
   subsets: ["latin"],
@@ -31,6 +32,8 @@ export default function RootLayout({
           <Title />
           {children}
         </Wrapper>
+
+        <Navigation />
       </body>
     </html>
   );

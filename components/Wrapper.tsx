@@ -30,6 +30,7 @@ export default Wrapper;
 
 const Container = styled.section`
   margin: 0 auto;
+  margin-bottom: 40px;
   width: 90%;
   padding-top: 16px;
   padding-bottom: 32px;

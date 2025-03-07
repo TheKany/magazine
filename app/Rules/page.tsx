@@ -1,6 +1,5 @@
 "use client";
 
-import Back from "@/components/Button/Back";
 import GroupRule from "@/components/GroupRule";
 import LeagueRule from "@/components/LeagueRule";
 import React, { useState } from "react";
@@ -23,8 +22,6 @@ const RulePage = () => {
       </ButtonContainer>
 
       {menu === 1 ? <GroupRule /> : <LeagueRule />}
-
-      <Back />
     </>
   );
 };
