@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Noto_Sans_KR } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import Title from "@/components/Title";
 import Wrapper from "@/components/Wrapper";
 
@@ -45,6 +46,7 @@ export default function RootLayout({
         </Wrapper>
 
         <Navigation />
+        <Analytics />
       </body>
     </html>
   );
