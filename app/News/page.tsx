@@ -9,7 +9,7 @@ const NewsPage = () => {
   return (
     <>
       <NewsContainer>
-        {Array.from({ length: 10 }).map((_, idx) => {
+        {Array.from({ length: 11 }).map((_, idx) => {
           return (
             <Image
               key={idx}
