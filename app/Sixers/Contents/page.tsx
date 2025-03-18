@@ -6,29 +6,33 @@ import React from "react";
 import styled from "styled-components";
 
 // 뉴스 팀장 매거진
-const HubPage = () => {
+const ContentsPage = () => {
   return (
     <Container>
       <LinkList>
         <MainLink
-          url="Leaders"
+          url="Contents/Leaders"
           title="식서스 팀장"
           subtitle="Sixers Season Leaders"
         />
 
         <MainLink
-          url="Story"
+          url="Contents/Story"
           title="식서스 매거진"
           subtitle="Sixers Magazine"
         />
 
-        <MainLink url="News" title="식서스 뉴스" subtitle="Sixers News" />
+        <MainLink
+          url="Contents/News"
+          title="식서스 뉴스"
+          subtitle="Sixers News"
+        />
       </LinkList>
     </Container>
   );
 };
 
-export default HubPage;
+export default ContentsPage;
 
 const LinkList = styled.div`
   width: 100%;

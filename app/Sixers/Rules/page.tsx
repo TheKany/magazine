@@ -2,6 +2,7 @@
 
 import GroupRule from "@/components/GroupRule";
 import LeagueRule from "@/components/LeagueRule";
+import Container from "@/components/_Container";
 import React, { useState } from "react";
 import styled from "styled-components";
 
@@ -11,7 +12,7 @@ const RulePage = () => {
     setMenu(id);
   };
   return (
-    <>
+    <Container>
       <ButtonContainer>
         <MenuButton onClick={() => onClickMenu(1)} $active={menu === 1}>
           회칙
@@ -22,7 +23,7 @@ const RulePage = () => {
       </ButtonContainer>
 
       {menu === 1 ? <GroupRule /> : <LeagueRule />}
-    </>
+    </Container>
   );
 };
 

@@ -60,7 +60,11 @@ export default function Home() {
           <MainLink url="/Rules" title="식서스 회칙" subtitle="Sixers Rules" />
 
           {/* 식서스 뉴스, 매거진, 시즌 정보 */}
-          <MainLink url="/Hub" title="식서스 허브" subtitle="Sixers Rules" />
+          <MainLink
+            url="/Contents"
+            title="식서스 컨텐츠"
+            subtitle="Sixers Contents"
+          />
 
           {/* 식서스 일정 */}
           <MainLink
@@ -95,6 +99,10 @@ const PlanDate = styled.p`
   font-size: 16px;
   font-weight: 700;
   padding-bottom: 4px;
+  border-bottom: 1px solid #a1a1a1;
+  width: 50%;
+  margin: 0 auto;
+  padding: 4px;
 `;
 
 const PlanText = styled.p`
