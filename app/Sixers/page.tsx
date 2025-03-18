@@ -10,8 +10,6 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 export default function Home() {
-  const [eventDate, setEventDate] = useState<EventProp[]>([]);
-
   const [weekSchedule, setWeekSchedule] =
     useState<string>("이번 주 일정이 없습니다.");
   const [schedule, setSchedule] = useState("");
@@ -20,7 +18,6 @@ export default function Home() {
     try {
       const fetchData = await fetch("/data/season.json");
       const resData = await fetchData.json();
-      setEventDate(resData);
 
       const { firstDay, lastDay } = getWeekRange();
       const filteredEvent = resData.find((event: EventProp) => {
@@ -41,7 +38,6 @@ export default function Home() {
     onLoadData();
   }, []);
 
-  console.log(eventDate);
   return (
     <>
       <Banner />

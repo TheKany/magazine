@@ -10,12 +10,12 @@ const Title = () => {
     <Container>
       <Link href={"/"} style={{ position: "relative" }}>
         <Image
-          src={"/title.png"}
+          src={
+            "https://drive.google.com/uc?export=view&id=1FWPtzXVJV830Ec76Jhx2U3rA80OL175O"
+          }
           alt="타이틀"
           width={222}
           height={132}
-          placeholder="blur"
-          blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
         />
       </Link>
     </Container>
