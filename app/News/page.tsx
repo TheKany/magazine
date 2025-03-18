@@ -1,12 +1,13 @@
 "use client";
 
+import Container from "@/components/_Container";
 import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 
 const NewsPage = () => {
   return (
-    <>
+    <Container>
       <NewsContainer>
         {Array.from({ length: 11 }).map((_, idx) => {
           return (
@@ -23,7 +24,7 @@ const NewsPage = () => {
           );
         })}
       </NewsContainer>
-    </>
+    </Container>
   );
 };
 

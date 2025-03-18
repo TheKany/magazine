@@ -1,78 +1,82 @@
 "use client";
 
+import { EventProp } from "@/Tpyes/types";
+import Banner from "@/components/Banner";
 import MainLink from "@/components/Button/MainLink";
-import Image from "next/image";
-import Slider from "react-slick";
+import Container from "@/components/_Container";
+import { getWeekRange } from "@/util/getWeekRange";
+import { useEffect, useState } from "react";
+
 import styled from "styled-components";
 
 export default function Home() {
-  const settings = {
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 2000,
-    autoplaySpeed: 3000,
-    cssEase: "linear",
-  };
+  const [eventDate, setEventDate] = useState<EventProp[]>([]);
 
+  const [weekSchedule, setWeekSchedule] =
+    useState<string>("이번 주 일정이 없습니다.");
+  const [schedule, setSchedule] = useState("");
+
+  const onLoadData = async () => {
+    try {
+      const fetchData = await fetch("/data/season.json");
+      const resData = await fetchData.json();
+      setEventDate(resData);
+
+      const { firstDay, lastDay } = getWeekRange();
+      const filteredEvent = resData.find((event: EventProp) => {
+        const eventDate = new Date(event.date);
+        return eventDate >= firstDay && eventDate <= lastDay;
+      });
+
+      setWeekSchedule(
+        filteredEvent ? `${filteredEvent.comment}` : "이번 주 일정이 없습니다."
+      );
+
+      setSchedule(`🗓️${filteredEvent.date}🗓️`);
+    } catch (error) {
+      console.error("Error loading event data:", error);
+    }
+  };
+  useEffect(() => {
+    onLoadData();
+  }, []);
+
+  console.log(eventDate);
   return (
     <>
-      <Banner>
-        <Slider {...settings}>
-          {Array.from({ length: 6 }).map((_, idx) => {
-            return (
-              <div key={idx}>
-                <Image
-                  src={`/img/news/ad${idx}.png`}
-                  alt={`광고${idx}`}
-                  width={400}
-                  height={300}
-                  layout="responsive"
-                  placeholder="blur"
-                  blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
-                />
-              </div>
-            );
-          })}
-        </Slider>
-      </Banner>
+      <Banner />
 
-      <LinkList>
-        <MainLink
-          url="/Notice"
-          title="식서스 공지사항"
-          subtitle="Sixers Notice"
-        />
-        <MainLink url="/Rules" title="식서스 회칙" subtitle="Sixers Rules" />
-        <MainLink url="/News" title="식서스 뉴스" subtitle="Sixers News" />
-      </LinkList>
+      <Container>
+        <PlanBanner>
+          <PlanDate>{schedule}</PlanDate>
+          <PlanText>{weekSchedule}</PlanText>
+        </PlanBanner>
 
-      <LinkListGrid>
-        <MainLink
-          url="/Leaders"
-          title="식서스 팀장"
-          subtitle="Sixers Season Leaders"
-        />
-        <MainLink
-          url="/Calendar"
-          title="식서스 일정"
-          subtitle="Sixers Schedule"
-        />
-      </LinkListGrid>
+        <LinkList>
+          {/* 공지사항 */}
+          <MainLink
+            url="/Notice"
+            title="식서스 공지사항"
+            subtitle="Sixers Notice"
+          />
 
-      <LinkList>
-        <MainLink
-          url="/Story"
-          title="식서스 매거진"
-          subtitle="Sixers Magazine"
-        />
-      </LinkList>
+          {/* 식서스 룰북 */}
+          <MainLink url="/Rules" title="식서스 회칙" subtitle="Sixers Rules" />
+
+          {/* 식서스 뉴스, 매거진, 시즌 정보 */}
+          <MainLink url="/Hub" title="식서스 허브" subtitle="Sixers Rules" />
+
+          {/* 식서스 일정 */}
+          <MainLink
+            url="/Calendar"
+            title="식서스 일정"
+            subtitle="Sixers Calendar"
+          />
+        </LinkList>
+      </Container>
     </>
   );
 }
-
-const Banner = styled.div``;
 
 const LinkList = styled.div`
   width: 100%;
@@ -84,9 +88,20 @@ const LinkList = styled.div`
   margin: 24px 0;
 `;
 
-const LinkListGrid = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+const PlanBanner = styled.div`
+  padding: 8px 0;
+  background-color: #fff;
+  border-radius: 8px;
+  text-align: center;
+`;
+
+const PlanDate = styled.p`
+  font-size: 16px;
+  font-weight: 700;
+  padding-bottom: 4px;
+`;
+
+const PlanText = styled.p`
+  font-size: 24px;
+  font-weight: 700;
 `;

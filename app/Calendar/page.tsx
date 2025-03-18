@@ -1,16 +1,11 @@
 "use client";
 
+import { EventProp } from "@/Tpyes/types";
 import ChevronLeft from "@/components/svg/ChevronLeft";
 import ChevronRight from "@/components/svg/ChevronRight";
 import dayjs from "dayjs";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-
-type EventProp = {
-  date: string;
-  type: string;
-  comment: string;
-};
 
 const CalendarPage = () => {
   const [currentDate, setCurrentDate] = useState(dayjs());
@@ -104,7 +99,7 @@ const CalendarContainer = styled.div`
   border-radius: 8px;
   margin: 0 auto;
   margin-top: 16px;
-  margin-bottom: 24px;
+  margin-bottom: 80px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `;
 
