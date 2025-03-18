@@ -88,6 +88,10 @@ const NavContainer = styled.div`
   place-content: center;
   place-items: center;
   background-color: #fff;
+
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 `;
 
 const MenuBox = styled.div`
