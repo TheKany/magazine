@@ -1,8 +1,8 @@
 "use client";
 
 import { BASE_IMG_URL } from "@/app/config";
+import ImageBox from "@/components/ImageBox";
 import Container from "@/components/_Container";
-import Image from "next/image";
 import styled from "styled-components";
 
 const LeaderPage = () => {
@@ -41,7 +41,7 @@ const LeaderPage = () => {
         {data.map((el) => (
           <div key={el.season}>
             <SeasonTitle>시즌 {el.season}</SeasonTitle>
-            <Image
+            <ImageBox
               src={`${BASE_IMG_URL}/season/s${el.season}/leader.png`}
               alt={`시즌${el.season} 팀장`}
               width={0}

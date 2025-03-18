@@ -1,7 +1,7 @@
 "use client";
 
 import { BASE_IMG_URL } from "@/app/config";
-import Image from "next/image";
+import ImageBox from "@/components/ImageBox";
 import React from "react";
 import styled from "styled-components";
 
@@ -20,7 +20,7 @@ const StoryPage = () => {
       </Text>
 
       <FirstImg>
-        <Image
+        <ImageBox
           src={`${BASE_IMG_URL}/season/s4/s4-1.png`}
           alt="이미지1"
           width={0}
@@ -161,7 +161,7 @@ const StoryPage = () => {
       </TextBox>
 
       {/* 문단 */}
-      <Image
+      <ImageBox
         src={`${BASE_IMG_URL}/season/s4/s4-8.jpg`}
         alt="이미지3"
         width={0}
@@ -205,7 +205,7 @@ const StoryPage = () => {
         </Text>
       </TextBox>
 
-      <Image
+      <ImageBox
         src={`${BASE_IMG_URL}/season/s4/s4-10.jpg`}
         alt="이미지3"
         width={0}

@@ -1,8 +1,8 @@
 "use client";
 
 import { BASE_IMG_URL } from "@/app/config";
+import ImageBox from "@/components/ImageBox";
 import Container from "@/components/_Container";
-import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 
@@ -12,7 +12,7 @@ const NewsPage = () => {
       <NewsContainer>
         {Array.from({ length: 11 }).map((_, idx) => {
           return (
-            <Image
+            <ImageBox
               key={idx}
               src={`${BASE_IMG_URL}/news/news${idx}.png`}
               alt={`뉴스${idx}`}

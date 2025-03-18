@@ -1,7 +1,7 @@
 import { BASE_IMG_URL } from "@/app/config";
-import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
+import ImageBox from "../ImageBox";
 
 type Props = {
   season: string;
@@ -12,7 +12,7 @@ const Card = ({ season }: Props) => {
     case "1":
       return (
         <DivContainer>
-          <Image
+          <ImageBox
             src={`${BASE_IMG_URL}/season/s${season}/mvp.png`}
             alt={`${season}시즌 mvp`}
             width={0}
@@ -29,7 +29,7 @@ const Card = ({ season }: Props) => {
     default:
       return (
         <Container href={`Story/season${season}`}>
-          <Image
+          <ImageBox
             src={`${BASE_IMG_URL}/season/s${season}/mvp.png`}
             alt={`${season}시즌 mvp`}
             width={0}
