@@ -9,7 +9,7 @@ import Wrapper from "./_Wrapper";
 const Navigation = () => {
   const router = useRouter();
   const onClickHome = () => {
-    router.push("/");
+    router.push("/Sixers");
   };
 
   return (

@@ -11,7 +11,7 @@ type Props = {
 
 const MainLink = ({ url, title, subtitle }: Props) => {
   return (
-    <LinkBtn href={url}>
+    <LinkBtn href={`Sixers/${url}`}>
       <TextBox>
         <Text>{title}</Text>
         <SubText>{subtitle}</SubText>

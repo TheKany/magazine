@@ -1,13 +1,10 @@
 "use client";
 
+import { Children } from "@/Types/types";
 import React from "react";
 import styled from "styled-components";
 
-type Props = {
-  children: React.ReactNode;
-};
-
-const Container = ({ children }: Props) => {
+const Container = ({ children }: Children) => {
   return <ContainerEl>{children}</ContainerEl>;
 };
 

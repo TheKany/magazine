@@ -1,6 +1,6 @@
 "use client";
 
-import { EventProp } from "@/Tpyes/types";
+import { EventProp } from "@/Types/types";
 import ChevronLeft from "@/components/svg/ChevronLeft";
 import ChevronRight from "@/components/svg/ChevronRight";
 import dayjs from "dayjs";

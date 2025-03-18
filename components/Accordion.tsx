@@ -3,13 +3,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const AccordionBox = ({
-  title,
-  children,
-}: {
+type Props = {
   title: string;
   children: React.ReactNode;
-}) => {
+};
+
+const AccordionBox = ({ title, children }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

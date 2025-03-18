@@ -1,11 +1,8 @@
+import { Children } from "@/Types/types";
 import React from "react";
 import styled from "styled-components";
 
-type Props = {
-  children: React.ReactNode;
-};
-
-const CardContainer = ({ children }: Props) => {
+const CardContainer = ({ children }: Children) => {
   return <Container>{children}</Container>;
 };
 

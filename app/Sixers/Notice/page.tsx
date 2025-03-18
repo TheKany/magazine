@@ -1,12 +1,13 @@
 "use client";
 
 import AccordionBox from "@/components/Accordion";
+import Container from "@/components/_Container";
 import React from "react";
 import styled from "styled-components";
 
 const NoticePage = () => {
   return (
-    <>
+    <Container>
       <Title>공지사항</Title>
 
       <AccordionBox title="회비 안내">
@@ -15,7 +16,7 @@ const NoticePage = () => {
         <Text>운영진의 안내에 따라 10일까지 입금 부탁드립니다.</Text>
         <Text>개인사정이 있으실 경우, 따로 연락 부탁드립니다.</Text>
       </AccordionBox>
-    </>
+    </Container>
   );
 };
 

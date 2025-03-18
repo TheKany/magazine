@@ -1,14 +1,11 @@
 "use client";
 
+import { Children } from "@/Types/types";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import React from "react";
 
-type Props = {
-  children: React.ReactNode;
-};
-
-const Wrapper = ({ children }: Props) => {
+const Wrapper = ({ children }: Children) => {
   const pathname = usePathname();
 
   return (
