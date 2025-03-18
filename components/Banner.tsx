@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Slider from "react-slick";
 import styled from "styled-components";
+import { BASE_IMG_URL } from "@/app/config";
 
 const Banner = () => {
   const settings = {
@@ -15,7 +16,6 @@ const Banner = () => {
     autoplaySpeed: 3000,
     cssEase: "linear",
   };
-
   return (
     <Container>
       <Slider {...settings}>
@@ -23,13 +23,14 @@ const Banner = () => {
           return (
             <div key={idx}>
               <Image
-                src={`/img/news/ad${idx}.png`}
+                src={`${BASE_IMG_URL}/banner/banner${idx}.png`}
                 alt={`광고${idx}`}
-                width={400}
-                height={300}
-                layout="responsive"
-                placeholder="blur"
-                blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: "100%", height: "auto" }}
+                unoptimized
+                priority
               />
             </div>
           );

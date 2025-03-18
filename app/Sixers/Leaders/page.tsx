@@ -1,5 +1,7 @@
 "use client";
 
+import { BASE_IMG_URL } from "@/app/config";
+import Container from "@/components/_Container";
 import Image from "next/image";
 import styled from "styled-components";
 
@@ -34,25 +36,30 @@ const LeaderPage = () => {
 
   return (
     <Container>
-      <Title>식서스 역대 팀장</Title>
-      {data.map((el) => (
-        <div key={el.season}>
-          <SeasonTitle>시즌 {el.season}</SeasonTitle>
-          <Image
-            src={`/img/s${el.season}/leader.png`}
-            alt={`시즌${el.season} 팀장`}
-            width={300}
-            height={220}
-          />
-        </div>
-      ))}
+      <Box>
+        <Title>식서스 역대 팀장</Title>
+        {data.map((el) => (
+          <div key={el.season}>
+            <SeasonTitle>시즌 {el.season}</SeasonTitle>
+            <Image
+              src={`${BASE_IMG_URL}/season/s${el.season}/leader.png`}
+              alt={`시즌${el.season} 팀장`}
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: "100%", height: "auto" }}
+              unoptimized
+            />
+          </div>
+        ))}
+      </Box>
     </Container>
   );
 };
 
 export default LeaderPage;
 
-const Container = styled.div`
+const Box = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;

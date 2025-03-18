@@ -1,5 +1,6 @@
 "use client";
 
+import { BASE_IMG_URL } from "@/app/config";
 import Container from "@/components/_Container";
 import Image from "next/image";
 import React from "react";
@@ -13,13 +14,13 @@ const NewsPage = () => {
           return (
             <Image
               key={idx}
-              src={`/img/news/news${idx}.png`}
+              src={`${BASE_IMG_URL}/news/news${idx}.png`}
               alt={`뉴스${idx}`}
-              width={400}
-              height={300}
-              layout="responsive"
-              placeholder="blur"
-              blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: "100%", height: "auto" }}
+              unoptimized
             />
           );
         })}

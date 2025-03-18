@@ -1,3 +1,4 @@
+import { BASE_IMG_URL } from "@/app/config";
 import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
@@ -12,13 +13,13 @@ const Card = ({ season }: Props) => {
       return (
         <DivContainer>
           <Image
-            src={`/img/s${season}/mvp.png`}
+            src={`${BASE_IMG_URL}/season/s${season}/mvp.png`}
             alt={`${season}시즌 mvp`}
-            width={400}
-            height={530}
-            layout="responsive"
-            placeholder="blur"
-            blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "auto" }}
+            unoptimized
           />
 
           <Title>식서스 시즌 {season} 호</Title>
@@ -27,15 +28,15 @@ const Card = ({ season }: Props) => {
 
     default:
       return (
-        <Container href={`/Story/season${season}`}>
+        <Container href={`Story/season${season}`}>
           <Image
-            src={`/img/s${season}/mvp.png`}
+            src={`${BASE_IMG_URL}/season/s${season}/mvp.png`}
             alt={`${season}시즌 mvp`}
-            width={400}
-            height={530}
-            layout="responsive"
-            placeholder="blur"
-            blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "auto" }}
+            unoptimized
           />
 
           <Title>식서스 시즌 {season} 호</Title>

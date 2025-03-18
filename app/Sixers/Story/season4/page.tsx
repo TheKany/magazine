@@ -1,5 +1,6 @@
 "use client";
 
+import { BASE_IMG_URL } from "@/app/config";
 import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
@@ -20,13 +21,13 @@ const StoryPage = () => {
 
       <FirstImg>
         <Image
-          src={"/img/s4/s4-1.png"}
+          src={`${BASE_IMG_URL}/season/s4/s4-1.png`}
           alt="이미지1"
-          width={221}
-          height={266}
-          layout="responsive"
-          placeholder="blur"
-          blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: "100%", height: "auto" }}
+          unoptimized
         />
       </FirstImg>
 
@@ -44,9 +45,9 @@ const StoryPage = () => {
               우승할수있었던것같습니다.
             </Text>
             <InsideImg
-              $url={"/img/s4/s4-2.png"}
+              $url={`${BASE_IMG_URL}/season/s4/s4-2.png`}
               $way="right"
-              src={"/img/s4/s4-2.png"}
+              src={`${BASE_IMG_URL}/season/s4/s4-2.png`}
               alt="이미지2"
               width={160}
               height={130}
@@ -89,9 +90,9 @@ const StoryPage = () => {
 
         <FlexBox>
           <InsideImg
-            $url={"/img/s4/s4-5.png"}
+            $url={`${BASE_IMG_URL}/season/s4/s4-5.png`}
             $way="right"
-            src={"/img/s4/s4-5.png"}
+            src={`${BASE_IMG_URL}/season/s4/s4-5.png`}
             alt="이미지2"
             width={200}
             height={180}
@@ -103,9 +104,9 @@ const StoryPage = () => {
             즐겁게 농구할 수 있었습니다 힘들었던점은 크게없는데 형준이가 농구를
             혼자하는게 쪼금 힘들었네요. 심지어 패스도못해서..
             <InsideImg
-              $url={"/img/s4/s4-4.png"}
+              $url={`${BASE_IMG_URL}/season/s4/s4-4.png`}
               $way="right"
-              src={"/img/s4/s4-4.png"}
+              src={`${BASE_IMG_URL}/season/s4/s4-4.png`}
               alt="이미지2"
               width={140}
               height={80}
@@ -123,9 +124,9 @@ const StoryPage = () => {
         </QText>
 
         <InsideImg
-          $url={"/img/s4/s4-7.png"}
+          $url={`${BASE_IMG_URL}/season/s4/s4-7.png`}
           $way="left"
-          src={"/img/s4/s4-7.png"}
+          src={`${BASE_IMG_URL}/season/s4/s4-7.png`}
           alt="이미지2"
           width={120}
           height={200}
@@ -149,9 +150,9 @@ const StoryPage = () => {
             열심히 나와주셔서 감사합니다♥
           </Text>
           <InsideImg
-            $url={"/img/s4/s4-6.png"}
+            $url={`${BASE_IMG_URL}/season/s4/s4-6.png`}
             $way="right"
-            src={"/img/s4/s4-6.png"}
+            src={`${BASE_IMG_URL}/season/s4/s4-6.png`}
             alt="이미지2"
             width={200}
             height={180}
@@ -161,13 +162,13 @@ const StoryPage = () => {
 
       {/* 문단 */}
       <Image
-        src={"/img/s4/s4-8.jpg"}
+        src={`${BASE_IMG_URL}/season/s4/s4-8.jpg`}
         alt="이미지3"
-        width={343}
-        height={228}
-        layout="responsive"
-        placeholder="blur"
-        blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
+        width={0}
+        height={0}
+        sizes="100vw"
+        style={{ width: "100%", height: "auto" }}
+        unoptimized
       />
       <TextBox>
         <QText>
@@ -183,9 +184,9 @@ const StoryPage = () => {
       <TextBox>
         <QText>Q: 다음 시즌에 대한 각오 한마디 해주세요.</QText>
         <InsideImg
-          $url={"/img/s4/s4-9.png"}
+          $url={`${BASE_IMG_URL}/season/s4/s4-9.png`}
           $way="left"
-          src={"/img/s4/s4-9.png"}
+          src={`${BASE_IMG_URL}/season/s4/s4-9.png`}
           alt="이미지2"
           width={100}
           height={230}
@@ -205,14 +206,13 @@ const StoryPage = () => {
       </TextBox>
 
       <Image
-        src={"/img/s4/s4-10.jpg"}
+        src={`${BASE_IMG_URL}/season/s4/s4-10.jpg`}
         alt="이미지3"
-        width={531}
-        height={304}
-        layout="responsive"
-        style={{ margin: "24px 0" }}
-        placeholder="blur"
-        blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
+        width={0}
+        height={0}
+        sizes="100vw"
+        style={{ width: "100%", height: "auto", margin: "24px 0" }}
+        unoptimized
       />
     </>
   );

@@ -11,18 +11,18 @@ const HubPage = () => {
     <Container>
       <LinkList>
         <MainLink
-          url="/Leaders"
+          url="Leaders"
           title="식서스 팀장"
           subtitle="Sixers Season Leaders"
         />
 
         <MainLink
-          url="/Story"
+          url="Story"
           title="식서스 매거진"
           subtitle="Sixers Magazine"
         />
 
-        <MainLink url="/News" title="식서스 뉴스" subtitle="Sixers News" />
+        <MainLink url="News" title="식서스 뉴스" subtitle="Sixers News" />
       </LinkList>
     </Container>
   );

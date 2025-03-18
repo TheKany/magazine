@@ -1,5 +1,6 @@
 "use client";
 
+import { BASE_IMG_URL } from "@/app/config";
 import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
@@ -20,12 +21,10 @@ const StoryPage = () => {
 
       <FirstImg>
         <Image
-          src={"/img/s2/s2-1.png"}
+          src={`${BASE_IMG_URL}/season/s2/s2-1.png`}
           alt="이미지1"
           width={221}
           height={266}
-          placeholder="blur"
-          blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
         />
       </FirstImg>
 
@@ -63,9 +62,9 @@ const StoryPage = () => {
 
         <SecondBox>
           <InsideImg
-            $url={"/img/s2/s2-2.png"}
+            $url={`${BASE_IMG_URL}/season/s2/s2-2.png`}
             $way="left"
-            src={"/img/s2/s2-2.png"}
+            src={`${BASE_IMG_URL}/season/s2/s2-2.png`}
             alt="이미지2"
             width={173}
             height={289}
@@ -96,9 +95,9 @@ const StoryPage = () => {
             있었던 것 같습니다. 덕분에 저도 꽤나 편하게 슛도 던진 것 같네요.
           </Text>
           <InsideImg
-            $url={"/img/s2/gun.png"}
+            $url={`${BASE_IMG_URL}/season/s2/gun.png`}
             $way="right"
-            src={"/img/s2/gun.png"}
+            src={`${BASE_IMG_URL}/season/s2/gun.png`}
             alt="이미지2"
             width={75}
             height={100}
@@ -108,13 +107,13 @@ const StoryPage = () => {
 
       {/* 6문단 */}
       <Image
-        src={"/img/s2/s2-3.png"}
+        src={`${BASE_IMG_URL}/season/s2/s2-3.png`}
         alt="이미지3"
-        width={343}
-        height={228}
-        layout="responsive"
-        placeholder="blur"
-        blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
+        width={0}
+        height={0}
+        sizes="100vw"
+        style={{ width: "100%", height: "auto" }}
+        unoptimized
       />
       <TextBox>
         <QText>
@@ -130,13 +129,13 @@ const StoryPage = () => {
       </TextBox>
 
       <Image
-        src={"/img/s2/s2-4.png"}
+        src={`${BASE_IMG_URL}/season/s2/s2-4.png`}
         alt="이미지3"
-        width={531}
-        height={304}
-        layout="responsive"
-        placeholder="blur"
-        blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
+        width={0}
+        height={0}
+        sizes="100vw"
+        style={{ width: "100%", height: "auto" }}
+        unoptimized
       />
     </>
   );

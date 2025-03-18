@@ -1,5 +1,6 @@
 "use client";
 
+import { BASE_IMG_URL } from "@/app/config";
 import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
@@ -22,12 +23,10 @@ const StoryPage = () => {
 
       <FirstImg>
         <Image
-          src={"/img/s3/s3-1.png"}
+          src={`${BASE_IMG_URL}/season/s3/s3-1.png`}
           alt="이미지1"
           width={221}
           height={266}
-          placeholder="blur"
-          blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
         />
       </FirstImg>
 
@@ -53,9 +52,9 @@ const StoryPage = () => {
         </QText>
 
         <InsideImg
-          $url={"/img/s3/s3-2.png"}
+          $url={`${BASE_IMG_URL}/season/s3/s3-2.png`}
           $way="right"
-          src={"/img/s3/s3-2.png"}
+          src={`${BASE_IMG_URL}/season/s3/s3-2.png`}
           alt="이미지2"
           width={90}
           height={140}
@@ -86,9 +85,9 @@ const StoryPage = () => {
             때, 형님도 힘드셨겠지만 꾸준하게 속공 득점을 통해 점수차를 좁히며
             팀원들의 사기를 올려주셨습니다.{" "}
             <InsideImg
-              $url={"/img/s3/s3-3.png"}
+              $url={`${BASE_IMG_URL}/season/s3/s3-3.png`}
               $way="right"
-              src={"/img/s3/s3-3.png"}
+              src={`${BASE_IMG_URL}/season/s3/s3-3.png`}
               alt="이미지2"
               width={100}
               height={180}
@@ -119,9 +118,9 @@ const StoryPage = () => {
           </Text>
 
           <InsideImg
-            $url={"/img/s3/s3-4.png"}
+            $url={`${BASE_IMG_URL}/season/s3/s3-4.png`}
             $way="right"
-            src={"/img/s3/s3-4.png"}
+            src={`${BASE_IMG_URL}/season/s3/s3-4.png`}
             alt="이미지2"
             width={120}
             height={180}
@@ -131,13 +130,13 @@ const StoryPage = () => {
 
       {/* 6문단 */}
       <Image
-        src={"/img/s3/s3-5.png"}
+        src={`${BASE_IMG_URL}/season/s3/s3-5.png`}
         alt="이미지3"
-        width={343}
-        height={228}
-        layout="responsive"
-        placeholder="blur"
-        blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
+        width={0}
+        height={0}
+        sizes="100vw"
+        style={{ width: "100%", height: "auto" }}
+        unoptimized
       />
       <TextBox>
         <QText>
@@ -169,13 +168,13 @@ const StoryPage = () => {
       </TextBox>
 
       <Image
-        src={"/img/s3/s3-6.png"}
+        src={`${BASE_IMG_URL}/season/s3/s3-6.png`}
         alt="이미지3"
-        width={531}
-        height={304}
-        layout="responsive"
-        placeholder="blur"
-        blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcfXZ3PQAHUgLEPrhDbwAAAABJRU5ErkJggg=="
+        width={0}
+        height={0}
+        sizes="100vw"
+        style={{ width: "100%", height: "auto" }}
+        unoptimized
       />
     </>
   );

@@ -6,8 +6,24 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  experimental: {
+    serverActions: {
+      allowedOrigins: ["localhost:3000"],
+    },
+  },
   images: {
-    domains: ["drive.google.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "sixers.s3.ap-southeast-2.amazonaws.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost:3000/",
+        pathname: "/**",
+      },
+    ],
   },
 };
 
