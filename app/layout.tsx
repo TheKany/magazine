@@ -2,12 +2,12 @@ import type { Metadata, Viewport } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import Title from "@/components/Title";
-import Wrapper from "@/components/Wrapper";
 
 import "./globals.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Navigation from "@/components/Navigation";
+import Wrapper from "@/components/_Wrapper";
 
 const notoSansKR = Noto_Sans_KR({
   subsets: ["latin"],

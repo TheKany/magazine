@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import styled from "styled-components";
 import Home from "./svg/Home";
+import Wrapper from "./_Wrapper";
 
 const Navigation = () => {
   const router = useRouter();
@@ -12,11 +13,13 @@ const Navigation = () => {
   };
 
   return (
-    <NavContainer>
-      <MenuBtn onClick={onClickHome}>
-        <Home />
-      </MenuBtn>
-    </NavContainer>
+    <Wrapper>
+      <NavContainer>
+        <MenuBtn onClick={onClickHome}>
+          <Home />
+        </MenuBtn>
+      </NavContainer>
+    </Wrapper>
   );
 };
 
