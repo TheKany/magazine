@@ -10,13 +10,25 @@ type Props = {
 };
 
 const MainLink = ({ url, title, subtitle }: Props) => {
+  const isSeason = url.includes("Season");
   return (
-    <LinkBtn href={`/Sixers/${url}`}>
-      <TextBox>
-        <Text>{title}</Text>
-        <SubText>{subtitle}</SubText>
-      </TextBox>
-    </LinkBtn>
+    <>
+      {isSeason ? (
+        <LinkBtnForSeason href={`/Sixers/${url}`}>
+          <TextBoxForSeason>
+            <TextForSeason>{title}</TextForSeason>
+            <SubText>{subtitle}</SubText>
+          </TextBoxForSeason>
+        </LinkBtnForSeason>
+      ) : (
+        <LinkBtn href={`/Sixers/${url}`}>
+          <TextBox>
+            <Text>{title}</Text>
+            <SubText>{subtitle}</SubText>
+          </TextBox>
+        </LinkBtn>
+      )}
+    </>
   );
 };
 
@@ -56,4 +68,37 @@ const Text = styled.span`
 const SubText = styled.span`
   font-size: 12px;
   color: #c1c2c1;
+`;
+
+const LinkBtnForSeason = styled.a`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+
+  font-family: "Jua";
+  color: #121212;
+  font-size: 18px;
+
+  position: relative;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: rgba(212, 210, 58, 0.48) 6px 2px 16px 10px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  background-color: #fff;
+`;
+
+const TextBoxForSeason = styled.div`
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+`;
+
+const TextForSeason = styled.span`
+  font-size: 20px;
+  padding-top: 4px;
 `;

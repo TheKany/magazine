@@ -11,6 +11,12 @@ const ContentsPage = () => {
     <Container>
       <LinkList>
         <MainLink
+          url="Contents/Season"
+          title="식서스 시즌 5"
+          subtitle="Sixers Season 5"
+        />
+
+        <MainLink
           url="Contents/Leaders"
           title="식서스 팀장"
           subtitle="Sixers Season Leaders"
