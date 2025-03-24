@@ -37,7 +37,6 @@ const LeaderPage = () => {
   return (
     <Container>
       <Box>
-        <Title>식서스 역대 팀장</Title>
         {data.map((el) => (
           <div key={el.season}>
             <SeasonTitle>시즌 {el.season}</SeasonTitle>
@@ -64,13 +63,6 @@ const Box = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;
-
-const Title = styled.p`
-  font-size: 25px;
-  font-weight: 700;
-  padding: 16px 0;
-  margin-bottom: 24px;
 `;
 
 const SeasonTitle = styled.p`

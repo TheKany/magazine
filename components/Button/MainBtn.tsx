@@ -3,15 +3,15 @@
 import React from "react";
 import styled from "styled-components";
 
-const Back = () => {
+const MainBtn = () => {
   return (
     <Container>
-      <BackBtn href="/">메인으로</BackBtn>
+      <LinkBtn href="/">메인으로</LinkBtn>
     </Container>
   );
 };
 
-export default Back;
+export default MainBtn;
 
 const Container = styled.div`
   display: flex;
@@ -21,7 +21,7 @@ const Container = styled.div`
   margin: 16px 0;
 `;
 
-const BackBtn = styled.a`
+const LinkBtn = styled.a`
   width: 100px;
   margin: 0 auto;
   padding: 4px;
