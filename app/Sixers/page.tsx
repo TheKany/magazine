@@ -5,6 +5,7 @@ import Banner from "@/components/Banner";
 import MainLink from "@/components/Button/MainLink";
 import Container from "@/components/_Container";
 import { getWeekRange } from "@/util/getWeekRange";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import styled from "styled-components";
@@ -29,7 +30,7 @@ export default function Home() {
         filteredEvent ? `${filteredEvent.comment}` : "이번 주 일정이 없습니다."
       );
 
-      setSchedule(`🗓️${filteredEvent.date}🗓️`);
+      setSchedule(`🗓️${filteredEvent.date}`);
     } catch (error) {
       console.error("Error loading event data:", error);
     }
@@ -43,6 +44,17 @@ export default function Home() {
       <Banner />
 
       <Container>
+        <div style={{ position: "relative" }}>
+          <MainLink
+            url="Contents/Season"
+            title="식서스 시즌 5"
+            subtitle="Sixers Season 5"
+          />
+          <ImgBox>
+            <Image src={"/img/new.png"} alt="new" fill unoptimized priority />
+          </ImgBox>
+        </div>
+
         <PlanBanner>
           <PlanDate>{schedule}</PlanDate>
           <PlanText>{weekSchedule}</PlanText>
@@ -89,23 +101,33 @@ const LinkList = styled.div`
 `;
 
 const PlanBanner = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+
   padding: 8px 0;
   background-color: #fff;
   border-radius: 8px;
-  text-align: center;
+  border-top: 1px dotted #646464;
 `;
 
-const PlanDate = styled.p`
-  font-size: 16px;
+const PlanDate = styled.span`
+  font-size: 12px;
   font-weight: 700;
-  padding-bottom: 4px;
-  border-bottom: 1px solid #a1a1a1;
-  width: 50%;
-  margin: 0 auto;
-  padding: 4px;
 `;
 
-const PlanText = styled.p`
-  font-size: 24px;
+const PlanText = styled.span`
+  font-size: 18px;
   font-weight: 700;
+`;
+
+const ImgBox = styled.div`
+  width: 40px;
+  height: 40px;
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 20%;
 `;

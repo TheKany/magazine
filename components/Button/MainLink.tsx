@@ -84,8 +84,7 @@ const LinkBtnForSeason = styled.a`
   position: relative;
   padding: 16px;
   border-radius: 8px;
-  box-shadow: rgba(212, 210, 58, 0.48) 6px 2px 16px 10px,
-    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+
   background-color: #fff;
 `;
 
