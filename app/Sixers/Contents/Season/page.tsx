@@ -7,6 +7,7 @@ import TotalRank from "./_components/TotalRank";
 import { getWeekRange } from "@/util/getWeekRange";
 import { EventProp } from "@/Types/types";
 import ProgressBar from "./_components/ProgressBar";
+import PrevHistory from "./_components/PrevHistory";
 
 const SeasonPage = () => {
   const [totalDate, setTotalDate] = useState<number>(0);
@@ -54,19 +55,7 @@ const SeasonPage = () => {
       <DivideLine />
 
       {/* 팀간 순위 정보 */}
-      {/* <MatchInfoBox>
-        <div>
-          <p>리바 vs 청용</p>
-        </div>
-
-        <div>
-          <p>청용 vs 상승</p>
-        </div>
-
-        <div>
-          <p>상승 vs 리바</p>
-        </div>
-      </MatchInfoBox> */}
+      <PrevHistory />
     </Container>
   );
 };
@@ -79,7 +68,3 @@ const DivideLine = styled.div`
   border: 1px solid #646464;
   margin: 36px auto;
 `;
-
-// const MatchInfoBox = styled.div`
-//   margin-bottom: 40px;
-// `;

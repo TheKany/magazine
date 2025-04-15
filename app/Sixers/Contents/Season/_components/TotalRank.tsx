@@ -17,26 +17,26 @@ const TotalRank = () => {
         <GridTable className="team-white">
           <p>-위</p>
           <p>리바운드</p>
+          <p>1</p>
           <p>-</p>
-          <p>-</p>
-          <p>-</p>
-          <p>-</p>
+          <p>1</p>
+          <p>3</p>
         </GridTable>
         <GridTable className="team-black">
           <p>-위</p>
           <p>청용열차</p>
+          <p>1</p>
           <p>-</p>
-          <p>-</p>
-          <p>-</p>
-          <p>-</p>
+          <p>1</p>
+          <p>3</p>
         </GridTable>
         <GridTable className="team-purple">
           <p>-위</p>
           <p>常勝(상승)</p>
+          <p>1</p>
           <p>-</p>
-          <p>-</p>
-          <p>-</p>
-          <p>-</p>
+          <p>1</p>
+          <p>3</p>
         </GridTable>
       </InfoTable>
       <InfoText>*팀의 퍼스트컬러입니다. 유니폼 색과 무관합니다.</InfoText>
