@@ -187,4 +187,5 @@ const QScore = styled.p`
   font-weight: 400;
   font-size: 16px;
   color: #b1b0ac;
+  text-align: center;
 `;
