@@ -15,6 +15,59 @@ const matchList: {
   history: { team1: TeamData; team2: TeamData }[];
 }[] = [
   {
+    date: "04.19",
+    history: [
+      {
+        team1: {
+          name: "리바운드",
+          logo: "/img/reba.png",
+          total: 30,
+          quarters: [15, 5, 6, 4],
+          isWinner: false,
+        },
+        team2: {
+          name: "청용열차",
+          logo: "/img/dragon.png",
+          total: 41,
+          quarters: [7, 14, 9, 11],
+          isWinner: true,
+        },
+      },
+      {
+        team1: {
+          name: "상승",
+          logo: "/img/up.png",
+          total: 38,
+          quarters: [4, 8, 14, 12],
+          isWinner: false,
+        },
+        team2: {
+          name: "리바운드",
+          logo: "/img/reba.png",
+          total: 43,
+          quarters: [7, 17, 8, 11],
+          isWinner: true,
+        },
+      },
+      {
+        team1: {
+          name: "청용열차",
+          logo: "/img/dragon.png",
+          total: 39,
+          quarters: [14, 8, 14, 3],
+          isWinner: true,
+        },
+        team2: {
+          name: "상승",
+          logo: "/img/up.png",
+          total: 27,
+          quarters: [2, 9, 9, 7],
+          isWinner: false,
+        },
+      },
+    ],
+  },
+  {
     date: "04.12",
     history: [
       {

@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 // 승: 3점 | 무: 1점 | 패: 0점
 const TotalRank = () => {
+  const [teams, setTeams] = useState([
+    { color: "white", name: "리바운드", win: 2, draw: 0, lose: 2 },
+    { color: "black", name: "청용열차", win: 3, draw: 0, lose: 1 },
+    { color: "purple", name: "常勝(상승)", win: 1, draw: 0, lose: 3 },
+  ]);
+
+  const [sorted, setSorted] = useState(false);
+
+  const getScore = (win: number, draw: number) => win * 3 + draw;
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const sortedTeams = [...teams].sort(
+        (a, b) => getScore(b.win, b.draw) - getScore(a.win, a.draw)
+      );
+      setTeams(sortedTeams);
+      setSorted(true);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <Table>
       <GridTable>
@@ -14,30 +36,16 @@ const TotalRank = () => {
         <p>승점</p>
       </GridTable>
       <InfoTable>
-        <GridTable className="team-white">
-          <p>-위</p>
-          <p>리바운드</p>
-          <p>1</p>
-          <p>-</p>
-          <p>1</p>
-          <p>3</p>
-        </GridTable>
-        <GridTable className="team-black">
-          <p>-위</p>
-          <p>청용열차</p>
-          <p>1</p>
-          <p>-</p>
-          <p>1</p>
-          <p>3</p>
-        </GridTable>
-        <GridTable className="team-purple">
-          <p>-위</p>
-          <p>常勝(상승)</p>
-          <p>1</p>
-          <p>-</p>
-          <p>1</p>
-          <p>3</p>
-        </GridTable>
+        {teams.map((team, index) => (
+          <AnimatedRow key={team.name} className={`team-${team.color}`}>
+            <p>{sorted ? `${index + 1}위` : "-위"}</p>
+            <p>{team.name}</p>
+            <p>{sorted ? team.win : "-"}</p>
+            <p>{sorted ? team.draw : "-"}</p>
+            <p>{sorted ? team.lose : "-"}</p>
+            <p>{sorted ? getScore(team.win, team.draw) : "-"}</p>
+          </AnimatedRow>
+        ))}
       </InfoTable>
       <InfoText>*팀의 퍼스트컬러입니다. 유니폼 색과 무관합니다.</InfoText>
     </Table>
@@ -95,6 +103,9 @@ const GridTable = styled.div`
     background-color: #371f4a;
     color: #fff;
   }
+`;
+const AnimatedRow = styled(GridTable)`
+  transition: all 1s ease;
 `;
 
 const InfoText = styled.p`
