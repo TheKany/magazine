@@ -4,9 +4,9 @@ import styled from "styled-components";
 // 승: 3점 | 무: 1점 | 패: 0점
 const TotalRank = () => {
   const [teams, setTeams] = useState([
-    { color: "white", name: "리바운드", win: 2, draw: 0, lose: 2 },
-    { color: "black", name: "청용열차", win: 3, draw: 0, lose: 1 },
-    { color: "purple", name: "常勝(상승)", win: 1, draw: 0, lose: 3 },
+    { color: "white", name: "리바운드", win: 2, draw: 0, lose: 4 },
+    { color: "black", name: "청용열차", win: 5, draw: 0, lose: 1 },
+    { color: "purple", name: "常勝(상승)", win: 2, draw: 0, lose: 4 },
   ]);
 
   const [sorted, setSorted] = useState(false);

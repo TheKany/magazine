@@ -4,6 +4,7 @@ import { EventProp } from "@/Types/types";
 import Banner from "@/components/Banner";
 import MainLink from "@/components/Button/MainLink";
 import Container from "@/components/_Container";
+import Arrowsvg from "@/components/svg/Arrow";
 import { getWeekRange } from "@/util/getWeekRange";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -44,21 +45,27 @@ export default function Home() {
       <Banner />
 
       <Container>
-        <div style={{ position: "relative" }}>
-          <MainLink
-            url="Contents/Season"
-            title="식서스 시즌 5"
-            subtitle="Sixers Season 5"
-          />
-          <ImgBox>
-            <Image src={"/img/new.png"} alt="new" fill unoptimized priority />
-          </ImgBox>
-        </div>
-
         <PlanBanner>
           <PlanDate>{schedule}</PlanDate>
           <PlanText>{weekSchedule}</PlanText>
         </PlanBanner>
+
+        <SeasonButtonContainer>
+          <SeasonButtonInnerContainer>
+            <MainLink
+              url="Contents/Season"
+              title="시즌 5 리그 정보"
+              subtitle="Sixers Season 5"
+            />
+            <ImgBox>
+              <Image src={"/img/new.png"} alt="new" fill unoptimized priority />
+            </ImgBox>
+
+            <ArrowImgBox>
+              <Arrowsvg />
+            </ArrowImgBox>
+          </SeasonButtonInnerContainer>
+        </SeasonButtonContainer>
 
         <LinkList>
           {/* 공지사항 */}
@@ -100,17 +107,23 @@ const LinkList = styled.div`
   margin: 24px 0;
 `;
 
+const ArrowImgBox = styled.div`
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translate(0px, -50%);
+`;
+
 const PlanBanner = styled.div`
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 4px;
 
   padding: 8px 0;
-  background-color: #fff;
   border-radius: 8px;
-  border-top: 1px dotted #646464;
 `;
 
 const PlanDate = styled.span`
@@ -123,11 +136,24 @@ const PlanText = styled.span`
   font-weight: 700;
 `;
 
+const SeasonButtonContainer = styled.div`
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.06) 2px 2px 4px 4px inset;
+`;
+
+const SeasonButtonInnerContainer = styled.div`
+  position: relative;
+  border-radius: 8px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+`;
+
 const ImgBox = styled.div`
   width: 40px;
   height: 40px;
   display: block;
   position: absolute;
   top: 10px;
-  left: 20%;
+  left: 15%;
 `;

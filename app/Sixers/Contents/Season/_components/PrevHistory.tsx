@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import styled from "styled-components";
 
 type TeamData = {
@@ -14,6 +13,59 @@ const matchList: {
   date: string;
   history: { team1: TeamData; team2: TeamData }[];
 }[] = [
+  {
+    date: "04.26",
+    history: [
+      {
+        team1: {
+          name: "상승",
+          logo: "/img/up.png",
+          total: 30,
+          quarters: [10, 6, 11, 3],
+          isWinner: false,
+        },
+        team2: {
+          name: "청용열차",
+          logo: "/img/dragon.png",
+          total: 37,
+          quarters: [14, 16, 12, 7],
+          isWinner: true,
+        },
+      },
+      {
+        team1: {
+          name: "리바운드",
+          logo: "/img/reba.png",
+          total: 33,
+          quarters: [6, 9, 13, 5],
+          isWinner: false,
+        },
+        team2: {
+          name: "청용열차",
+          logo: "/img/dragon.png",
+          total: 39,
+          quarters: [6, 11, 13, 9],
+          isWinner: true,
+        },
+      },
+      {
+        team1: {
+          name: "상승",
+          logo: "/img/up.png",
+          total: 63,
+          quarters: [18, 21, 8, 16],
+          isWinner: true,
+        },
+        team2: {
+          name: "리바운드",
+          logo: "/img/reba.png",
+          total: 38,
+          quarters: [6, 6, 11, 15],
+          isWinner: false,
+        },
+      },
+    ],
+  },
   {
     date: "04.19",
     history: [
@@ -128,7 +180,7 @@ const PrevHistory = () => {
       <PreviousTitle>지난 기록</PreviousTitle>
 
       {matchList.map(({ date, history }, i) => (
-        <div key={i}>
+        <History key={i}>
           <DateText>{date}</DateText>
           {history.map(({ team1, team2 }, j) => (
             <Table key={j}>
@@ -166,7 +218,7 @@ const PrevHistory = () => {
               ))}
             </Table>
           ))}
-        </div>
+        </History>
       ))}
     </PrevHistoryBox>
   );
@@ -189,6 +241,10 @@ const PreviousTitle = styled.p`
   font-size: 20px;
   font-weight: 700;
   text-align: center;
+`;
+
+const History = styled.div`
+  border-bottom: 1px solid #ccc;
 `;
 
 const Table = styled.div`
