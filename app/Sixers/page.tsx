@@ -58,7 +58,13 @@ export default function Home() {
               subtitle="Sixers Season 5"
             />
             <ImgBox>
-              <Image src={"/img/new.png"} alt="new" fill unoptimized priority />
+              <Image
+                src={"/img/sixers-lakers.png"}
+                alt="new"
+                fill
+                unoptimized
+                priority
+              />
             </ImgBox>
 
             <ArrowImgBox>
@@ -150,10 +156,10 @@ const SeasonButtonInnerContainer = styled.div`
 `;
 
 const ImgBox = styled.div`
-  width: 40px;
+  width: 64px;
   height: 40px;
   display: block;
   position: absolute;
   top: 10px;
-  left: 15%;
+  left: 8%;
 `;
