@@ -3,17 +3,16 @@
 import { BASE_IMG_URL } from "@/app/config";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import styled from "styled-components";
 const Title = () => {
   return (
     <Container>
       <Link href={"/"} style={{ position: "relative" }}>
         <Image
-          src={`${BASE_IMG_URL}/logo/logo_03.png`}
+          src={`${BASE_IMG_URL}/logo/logo_04.svg`}
           alt="타이틀"
-          width={222}
-          height={132}
+          width={120}
+          height={36}
           priority
         />
       </Link>
@@ -26,7 +25,7 @@ export default Title;
 const Container = styled.div`
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  margin-top: 24px;
+  padding: 24px 16px 16px 16px;
 `;
