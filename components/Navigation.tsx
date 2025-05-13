@@ -1,14 +1,13 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
-import React from "react";
 import styled from "styled-components";
-import Home from "./svg/Home";
 import Wrapper from "./_Wrapper";
+import Calendar from "./svg/Calendar";
+import Home from "./svg/Home";
+import HubTopic from "./svg/HubTopic";
 import Megaphone from "./svg/Megaphone";
 import Whistle from "./svg/Whistle";
-import HubTopic from "./svg/HubTopic";
-import Calendar from "./svg/Calendar";
 
 const Navigation = () => {
   const router = useRouter();
@@ -41,7 +40,7 @@ const Navigation = () => {
             <Whistle isActive={pathname.includes("/Sixers/Rules")} />
           </MenuBtn>
           <MenuText $isActive={pathname.includes("/Sixers/Rules")}>
-            규칙
+            회칙
           </MenuText>
         </MenuBox>
 
