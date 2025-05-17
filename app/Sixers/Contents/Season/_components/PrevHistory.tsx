@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useState } from "react";
 import styled from "styled-components";
 
 type TeamData = {
@@ -13,6 +14,59 @@ const matchList: {
   date: string;
   history: { team1: TeamData; team2: TeamData }[];
 }[] = [
+  {
+    date: "05.17",
+    history: [
+      {
+        team1: {
+          name: "리바운드",
+          logo: "/img/reba.png",
+          total: 37,
+          quarters: [9, 15, 23, 37],
+          isWinner: false,
+        },
+        team2: {
+          name: "청용열차",
+          logo: "/img/dragon.png",
+          total: 65,
+          quarters: [16, 37, 53, 65],
+          isWinner: true,
+        },
+      },
+      {
+        team1: {
+          name: "상승",
+          logo: "/img/up.png",
+          total: 55,
+          quarters: [14, 30, 42, 55],
+          isWinner: true,
+        },
+        team2: {
+          name: "리바운드",
+          logo: "/img/reba.png",
+          total: 38,
+          quarters: [5, 14, 26, 38],
+          isWinner: false,
+        },
+      },
+      {
+        team1: {
+          name: "청용열차",
+          logo: "/img/dragon.png",
+          total: 43,
+          quarters: [9, 23, 27, 38],
+          isWinner: false,
+        },
+        team2: {
+          name: "상승",
+          logo: "/img/up.png",
+          total: 43,
+          quarters: [8, 21, 32, 43],
+          isWinner: true,
+        },
+      },
+    ],
+  },
   {
     date: "05.10",
     history: [
@@ -228,49 +282,59 @@ const matchList: {
 ];
 
 const PrevHistory = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const onClickToggleScoreBoard = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <PrevHistoryBox>
       <PreviousTitle>지난 기록</PreviousTitle>
 
       {matchList.map(({ date, history }, i) => (
         <History key={i}>
-          <DateText>{date}</DateText>
-          {history.map(({ team1, team2 }, j) => (
-            <Table key={j}>
-              {[team1, team2].map((team, idx) => (
-                <Team key={idx}>
-                  <ImageBox $width="25px" $height="25px">
-                    <Image
-                      src={team.logo}
-                      alt={`${team.name} 팀로고`}
-                      fill
-                      unoptimized
-                    />
-                  </ImageBox>
+          <DateText onClick={() => onClickToggleScoreBoard(i)}>{date}</DateText>
+          <Accordion isOpen={openIndex === i}>
+            <AccordionInner>
+              {history.map(({ team1, team2 }, j) => (
+                <Table key={j}>
+                  {[team1, team2].map((team, idx) => (
+                    <Team key={idx}>
+                      <ImageBox $width="25px" $height="25px">
+                        <Image
+                          src={team.logo}
+                          alt={`${team.name} 팀로고`}
+                          fill
+                          unoptimized
+                        />
+                      </ImageBox>
 
-                  <TeamName $winner={team.isWinner}>{team.name}</TeamName>
+                      <TeamName $winner={team.isWinner}>{team.name}</TeamName>
 
-                  <ScoreBoard>
-                    <TScore $winner={team.isWinner}>{team.total}</TScore>
-                    {team.quarters.map((q, k) => (
-                      <QScore key={k}>{q}</QScore>
-                    ))}
-                  </ScoreBoard>
+                      <ScoreBoard>
+                        <TScore $winner={team.isWinner}>{team.total}</TScore>
+                        {team.quarters.map((q, k) => (
+                          <QScore key={k}>{q}</QScore>
+                        ))}
+                      </ScoreBoard>
 
-                  {team.isWinner && (
-                    <ImageBox $width="50px" $height="15px">
-                      <Image
-                        src="/img/winner.png"
-                        alt="승리팀"
-                        fill
-                        unoptimized
-                      />
-                    </ImageBox>
-                  )}
-                </Team>
+                      {team.isWinner && (
+                        <ImageBox $width="50px" $height="15px">
+                          <Image
+                            src="/img/winner.png"
+                            alt="승리팀"
+                            fill
+                            unoptimized
+                          />
+                        </ImageBox>
+                      )}
+                    </Team>
+                  ))}
+                </Table>
               ))}
-            </Table>
-          ))}
+            </AccordionInner>
+          </Accordion>
         </History>
       ))}
     </PrevHistoryBox>
@@ -279,11 +343,24 @@ const PrevHistory = () => {
 
 export default PrevHistory;
 
-const DateText = styled.p`
+const Accordion = styled.div<{ isOpen: boolean }>`
+  overflow: hidden;
+  transition: height 0.3s ease;
+  height: ${({ isOpen }) => (isOpen ? "300px" : "0px")};
+`;
+
+const AccordionInner = styled.div`
+  padding: 16px 0;
+`;
+
+const DateText = styled.button`
   font-size: 16px;
   font-weight: 500;
-  margin-top: 24px;
+  padding: 16px 0;
   text-decoration: underline;
+  width: 100%;
+  height: 50px;
+  text-align: start;
 `;
 
 const PrevHistoryBox = styled.div`
@@ -304,7 +381,7 @@ const Table = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin: 24px 0;
+  margin-bottom: 24px;
 `;
 
 const Team = styled.div`
