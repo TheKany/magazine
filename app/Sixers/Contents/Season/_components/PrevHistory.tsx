@@ -295,7 +295,7 @@ const PrevHistory = () => {
       {matchList.map(({ date, history }, i) => (
         <History key={i}>
           <DateText onClick={() => onClickToggleScoreBoard(i)}>{date}</DateText>
-          <Accordion isOpen={openIndex === i}>
+          <Accordion $isOpen={openIndex === i}>
             <AccordionInner>
               {history.map(({ team1, team2 }, j) => (
                 <Table key={j}>
@@ -343,10 +343,10 @@ const PrevHistory = () => {
 
 export default PrevHistory;
 
-const Accordion = styled.div<{ isOpen: boolean }>`
+const Accordion = styled.div<{ $isOpen: boolean }>`
   overflow: hidden;
   transition: height 0.3s ease;
-  height: ${({ isOpen }) => (isOpen ? "300px" : "0px")};
+  height: ${({ $isOpen }) => ($isOpen ? "300px" : "0px")};
 `;
 
 const AccordionInner = styled.div`
