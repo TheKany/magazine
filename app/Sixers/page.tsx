@@ -4,12 +4,11 @@ import { EventProp } from "@/Types/types";
 import Banner from "@/components/Banner";
 import MainLink from "@/components/Button/MainLink";
 import Container from "@/components/_Container";
-// import { getWeekRange } from "@/util/getWeekRange";
 import { useEffect, useState } from "react";
 
 import styled from "styled-components";
 
-export default function Home() {
+export default function Sixers() {
   const [weekSchedule, setWeekSchedule] =
     useState<string>("이번 주 일정이 없습니다.");
   const [schedule, setSchedule] = useState("");
@@ -21,7 +20,6 @@ export default function Home() {
 
       const today = new Date();
 
-      // 오늘 이후의 일정 중 가장 가까운 일정 찾기
       const nextEvent = resData.find((event: EventProp) => {
         const eventDate = new Date(event.date);
         return eventDate >= today;
