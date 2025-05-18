@@ -56,7 +56,8 @@ export default Fireworks;
 const LottieWrapper = styled.div`
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
   width: 80%;
   height: 80%;
   pointer-events: none;
