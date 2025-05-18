@@ -4,7 +4,11 @@ import Image from "next/image";
 // import Slider from "react-slick";
 import styled from "styled-components";
 import { BASE_IMG_URL } from "@/app/config";
-import Fireworks from "./Lottie/Fireworks";
+import dynamic from "next/dynamic";
+
+const Fireworks = dynamic(() => import("./Lottie/Fireworks"), {
+  ssr: false,
+});
 
 const Banner = () => {
   // const settings = {
