@@ -9,7 +9,7 @@ const Title = () => {
     <Container>
       <Link href={"/"} style={{ position: "relative" }}>
         <Image
-          src={`${BASE_IMG_URL}/logo/logo_04.svg`}
+          src={`${BASE_IMG_URL}/logo/logo_blackWin.svg`}
           alt="타이틀"
           width={120}
           height={36}
@@ -28,4 +28,5 @@ const Container = styled.div`
   justify-content: start;
   align-items: center;
   padding: 24px 16px 16px 16px;
+  background-color: #121212;
 `;

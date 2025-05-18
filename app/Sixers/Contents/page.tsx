@@ -5,7 +5,6 @@ import Container from "@/components/_Container";
 import React from "react";
 import styled from "styled-components";
 
-// 뉴스 팀장 매거진
 const ContentsPage = () => {
   return (
     <Container>
@@ -26,6 +25,12 @@ const ContentsPage = () => {
           url="Contents/News"
           title="식서스 뉴스"
           subtitle="Sixers News"
+        />
+
+        <MainLink
+          url="Contents/History"
+          title="식서스 시즌 정보"
+          subtitle="Sixers Season History"
         />
       </LinkList>
     </Container>
