@@ -1,10 +1,10 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 // import Slider from "react-slick";
 import styled from "styled-components";
 import { BASE_IMG_URL } from "@/app/config";
+import Fireworks from "./Lottie/Fireworks";
 
 const Banner = () => {
   // const settings = {
@@ -16,6 +16,7 @@ const Banner = () => {
   //   autoplaySpeed: 3000,
   //   cssEase: "linear",
   // };
+
   return (
     <Container>
       {/* <Slider {...settings}>
@@ -37,6 +38,8 @@ const Banner = () => {
         })}
       </Slider> */}
 
+      <Fireworks />
+
       <Image
         src={`${BASE_IMG_URL}/banner/season5_winner.png`}
         alt="season5 우승팀"
@@ -48,7 +51,7 @@ const Banner = () => {
         priority
       />
 
-      <Text>식서스 여러분 시즌 5 고생하셨습니다!</Text>
+      <Text>식서스 여러분, 시즌 5 고생하셨습니다!</Text>
     </Container>
   );
 };
