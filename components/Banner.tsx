@@ -5,6 +5,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import { BASE_IMG_URL } from "@/app/config";
 import dynamic from "next/dynamic";
+import Wrapper from "./_Wrapper";
 
 const Fireworks = dynamic(() => import("./Lottie/Fireworks"), {
   ssr: false,
@@ -22,7 +23,7 @@ const Banner = () => {
   // };
 
   return (
-    <Container>
+    <Wrapper>
       {/* <Slider {...settings}>
         {Array.from({ length: 6 }).map((_, idx) => {
           return (
@@ -56,13 +57,11 @@ const Banner = () => {
       />
 
       <Text>식서스 여러분, 시즌 5 고생하셨습니다!</Text>
-    </Container>
+    </Wrapper>
   );
 };
 
 export default Banner;
-
-const Container = styled.div``;
 
 const Text = styled.p`
   width: 100%;
