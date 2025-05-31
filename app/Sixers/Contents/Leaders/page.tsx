@@ -5,32 +5,34 @@ import ImageBox from "@/components/ImageBox";
 import Container from "@/components/_Container";
 import styled from "styled-components";
 
+// leader에 '' 이 있으면 언노운 이미지로
+// 있으면 리더 있는 사진으로
+
 const LeaderPage = () => {
   const data = [
     {
       season: 1,
       leader: ["이 승", "기세면", "강동구"],
-      winner: "워시 페이서스",
     },
     {
       season: 2,
       leader: ["신지호", "동건명", "강동구"],
-      winner: "어게인 워시 페이서스",
     },
     {
       season: 3,
       leader: ["김진우", "이근우", "조형준"],
-      winner: "워시 페이서스",
     },
     {
       season: 4,
       leader: ["정재훈", "심상민", "이민재"],
-      winner: "워시 페이서스",
     },
     {
       season: 5,
+      leader: ["천용우", "이준철", "조형진"],
+    },
+    {
+      season: 6,
       leader: ["", "", ""],
-      winner: "",
     },
   ];
 

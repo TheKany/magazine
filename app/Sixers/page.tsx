@@ -49,9 +49,11 @@ export default function Sixers() {
           <PlanText>{weekSchedule}</PlanText>
         </PlanBanner>
 
-        <AlarmBanner>
-          기존 시즌 정보는 [식서스 컨텐츠] 메뉴에 있습니다.
-        </AlarmBanner>
+        <MainLink
+          url="/PlayNow"
+          title="식서스 시즌 6 정보"
+          subtitle="Sixers Season 6"
+        />
 
         <LinkList>
           {/* 공지사항 */}
@@ -83,14 +85,14 @@ export default function Sixers() {
   );
 }
 
-const AlarmBanner = styled.p`
-  width: 100%;
-  text-align: center;
-  font-size: 14px;
-  background-color: #121212;
-  color: #fff;
-  padding: 4px 0;
-`;
+// const AlarmBanner = styled.p`
+//   width: 100%;
+//   text-align: center;
+//   font-size: 14px;
+//   background-color: #121212;
+//   color: #fff;
+//   padding: 4px 0;
+// `;
 
 const LinkList = styled.div`
   width: 100%;

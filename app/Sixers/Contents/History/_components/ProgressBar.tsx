@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 type Props = {
@@ -6,6 +5,8 @@ type Props = {
   totalDate: number;
   remainDate: number;
 };
+
+// 시즌 진행율 표시는 날짜 동그라미 삭제로
 
 const ProgressBar = ({ progress, remainDate, totalDate }: Props) => {
   return (

@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import styled from "styled-components";
 
 type Props = {
@@ -10,16 +9,18 @@ type Props = {
 };
 
 const MainLink = ({ url, title, subtitle }: Props) => {
-  const isSeason = url.includes("Season");
+  const isSeason = url.includes("PlayNow");
   return (
     <>
       {isSeason ? (
-        <LinkBtnForSeason href={`/Sixers/${url}`}>
-          <TextBoxForSeason>
-            <TextForSeason>{title}</TextForSeason>
-            <SubText>{subtitle}</SubText>
-          </TextBoxForSeason>
-        </LinkBtnForSeason>
+        <ButtonOutline href={`/Sixers/Contents/${url}`}>
+          <LinkBtnForSeason>
+            <TextBoxForSeason>
+              <TextForSeason>{title}</TextForSeason>
+              <SubText>{subtitle}</SubText>
+            </TextBoxForSeason>
+          </LinkBtnForSeason>
+        </ButtonOutline>
       ) : (
         <LinkBtn href={`/Sixers/${url}`}>
           <TextBox>
@@ -70,7 +71,14 @@ const SubText = styled.span`
   color: #c1c2c1;
 `;
 
-const LinkBtnForSeason = styled.a`
+const ButtonOutline = styled.a`
+  display: block;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.06) 2px 2px 4px 4px inset;
+`;
+
+const LinkBtnForSeason = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
