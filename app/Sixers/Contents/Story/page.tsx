@@ -14,6 +14,7 @@ const Story = () => {
         <Card season="2" />
         <Card season="3" />
         <Card season="4" />
+        <Card season="5" />
       </CardContainer>
     </Container>
   );

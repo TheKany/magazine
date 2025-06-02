@@ -25,10 +25,15 @@ const LeaderPage = () => {
     {
       season: 4,
       leader: ["정재훈", "심상민", "이민재"],
-      winner: "워시 페이서스",
+      winner: "캐치 감마핑",
     },
     {
       season: 5,
+      leader: ["천용우", "이준철", "조형진"],
+      winner: "청용열차",
+    },
+    {
+      season: 6,
       leader: ["", "", ""],
       winner: "",
     },
@@ -63,6 +68,8 @@ const Box = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 16px 0;
+  margin: 16px 0;
 `;
 
 const SeasonTitle = styled.p`
