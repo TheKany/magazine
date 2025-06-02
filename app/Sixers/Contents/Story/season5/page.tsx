@@ -10,8 +10,12 @@ const StoryPage = () => {
     <>
       {/* 문단 */}
       <Text $break={false}>
-        압도적인 우승을 거둔 시즌5였다. 이번 시즌은 청용열차 팀이 너무 강했던
-        탓일까? 8승 2패로 시즌을 조기에 마무리 지어버린 그 들이었다.
+        압도적인 우승을 거둔 청용열차의 시즌 5였다. <br />
+        팀원들 모두가 스마일 농구를 지향한 결과 8승 2패로 시즌을 조기에 마무리
+        지어버렸다. <br />이 팀에서 돋보이는 선수를 꼽자면 <br />
+        <strong>이상엽</strong> 선수와 <strong>조형준</strong> 선수가 있었지만,{" "}
+        <br />이 둘은 취향차이라고 했던가... <br />
+        mvp는 조형준 선수의 진땀승으로 마무리 지어졌다.
       </Text>
 
       <FirstImg>
@@ -41,13 +45,29 @@ const StoryPage = () => {
       {/* 문단 */}
       <TextBox>
         <QText>
-          Q: 4시즌만에 첫 우승이십니다. 이번시즌 팀장으로 팀을 이끌면서 전
-          시즌들 보다 각오가 남달라 보이셨는데 이번 시즌 어떻게 준비하셨나요?
+          Q: 2시즌 연속 3위 후 우승입니다. 이번 시즌 8승 2패 압도적인 승률로
+          우승하셨는데 비결이 따로 있다면 말씀해주세요.
         </QText>
 
         <Text $break={true}>
           팀원을 정말 잘 만났다고 생각합니다. 모두가 ‘우승하자’는 확실한
           동기부여가 되어 있어서, 좋은 성적을 낼 수 있었던 것 같습니다.
+        </Text>
+      </TextBox>
+
+      {/* 문단 */}
+      <TextBox>
+        <QText>
+          Q: 청용열차팀으로 한시즌 치루면서 가장 좋았던 점과 힘들었던 점을
+          한가지씩 꼽으라면 무엇일까요?
+        </QText>
+
+        <Text $break={true}>
+          모두가 팀의 궃은 일을 마다하지 않아 수비나 리바운드에서 큰 구멍이
+          없었던 점이 가장 좋았습니다. 다만, 전체적으로 슛감이 좋지 않고
+          지나치게 이타적인 경향이 있어서, 하프코트 오펜스가 다소 답답할 때도
+          있었지만, 간간이 나오는 속공과 에이스 상엽 씨의 존재감 덕분에 경기가
+          잘 풀렸습니다.
         </Text>
       </TextBox>
 
@@ -78,7 +98,8 @@ const StoryPage = () => {
 
       <TextBox>
         <QText>
-          Q: 4시즌 치루면서 가장 상대 하기 힘들었던 선수가 있다면 누구인가요?
+          Q: 이번 시즌을 치루면서 가장 상대 하기 힘들었던 선수가 있다면
+          누구인가요?
         </QText>
         <Text $break={false}>
           <InsideImg
@@ -135,11 +156,11 @@ const TextBox = styled.div`
 
 const Text = styled.p<{ $break: boolean }>`
   word-break: ${(props) => (props.$break ? "break-all" : "keep-all")};
-  font-size: 14px;
+  font-size: 15px;
 `;
 
 const QText = styled.p`
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   margin: 4px 0;
 `;
