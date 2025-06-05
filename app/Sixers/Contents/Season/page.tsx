@@ -6,6 +6,7 @@ import { evaluateMatches } from "@/util/handlePlayData";
 import styled from "styled-components";
 import PlanList from "./_components/PlanList";
 import TotalRank from "./_components/TotalRank";
+import PrevHistory from "./_components/PrevHistory";
 
 const SeasonPage = () => {
   const result = evaluateMatches([
@@ -44,6 +45,7 @@ const SeasonPage = () => {
 
       <DivideLine />
       {/* 히스토리 */}
+      <PrevHistory />
     </Container>
   );
 };

@@ -21,17 +21,6 @@ const TotalRank = () => {
 
   const getScore = (win: number, draw: number) => win * 3 + draw;
 
-  //   useEffect(() => {
-  //     const timer = setTimeout(() => {
-  //       const sortedTeams = [...teams].sort(
-  //         (a, b) => getScore(b.win, b.draw) - getScore(a.win, a.draw)
-  //       );
-  //       setTeams(sortedTeams);
-  //       setSorted(true);
-  //     }, 1000);
-
-  //     return () => clearTimeout(timer);
-  //   }, []);
   useEffect(() => {
     const timer = setTimeout(() => {
       const sortedTeams = [...teams2].sort(
