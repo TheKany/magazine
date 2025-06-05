@@ -3,23 +3,46 @@ import styled from "styled-components";
 
 // 승: 3점 | 무: 1점 | 패: 0점
 const TotalRank = () => {
-  const [teams, setTeams] = useState([
-    { color: "white", name: "리바운드", win: 2, draw: 0, lose: 6 },
-    { color: "black", name: "청용열차", win: 7, draw: 0, lose: 1 },
-    { color: "purple", name: "常勝(상승)", win: 3, draw: 0, lose: 5 },
+  // 시즌 5
+  //   const [teams, setTeams] = useState([
+  //     { color: "white", name: "리바운드", win: 2, draw: 0, lose: 8 },
+  //     { color: "black", name: "청용열차", win: 8, draw: 0, lose: 2 },
+  //     { color: "purple", name: "常勝(상승)", win: 5, draw: 0, lose: 5 },
+  //   ]);
+
+  // 시즌 6
+  const [teams2, setTeams2] = useState([
+    { color: "white", name: "승부사's", win: 0, draw: 0, lose: 0 },
+    { color: "black", name: "뀨♥️키즈", win: 0, draw: 0, lose: 0 },
+    { color: "purple", name: "籠口(농구)", win: 0, draw: 0, lose: 0 },
   ]);
 
   const [sorted, setSorted] = useState(false);
 
   const getScore = (win: number, draw: number) => win * 3 + draw;
 
+  //   useEffect(() => {
+  //     const timer = setTimeout(() => {
+  //       const sortedTeams = [...teams].sort(
+  //         (a, b) => getScore(b.win, b.draw) - getScore(a.win, a.draw)
+  //       );
+  //       setTeams(sortedTeams);
+  //       setSorted(true);
+  //     }, 1000);
+
+  //     return () => clearTimeout(timer);
+  //   }, []);
   useEffect(() => {
     const timer = setTimeout(() => {
-      const sortedTeams = [...teams].sort(
+      const sortedTeams = [...teams2].sort(
         (a, b) => getScore(b.win, b.draw) - getScore(a.win, a.draw)
       );
-      setTeams(sortedTeams);
-      setSorted(true);
+      setTeams2(sortedTeams);
+
+      const allZero = sortedTeams.every(
+        (team) => getScore(team.win, team.draw) === 0
+      );
+      setSorted(!allZero);
     }, 1000);
 
     return () => clearTimeout(timer);
@@ -36,7 +59,7 @@ const TotalRank = () => {
         <p>승점</p>
       </GridTable>
       <InfoTable>
-        {teams.map((team, index) => (
+        {teams2.map((team, index) => (
           <AnimatedRow key={team.name} className={`team-${team.color}`}>
             <p>{sorted ? `${index + 1}위` : "-위"}</p>
             <p>{team.name}</p>
@@ -100,7 +123,7 @@ const GridTable = styled.div`
 
   /* 퍼플팀 */
   &.team-purple {
-    background-color: #371f4a;
+    background-color: #492a8d;
     color: #fff;
   }
 `;

@@ -1,10 +1,11 @@
 "use client";
 
-import Container from "@/components/_Container";
 import PlanBanner from "@/components/Banner/PlanBanner";
+import Container from "@/components/_Container";
+import { evaluateMatches } from "@/util/handlePlayData";
 import styled from "styled-components";
 import PlanList from "./_components/PlanList";
-import { evaluateMatches } from "@/util/handlePlayData";
+import TotalRank from "./_components/TotalRank";
 
 const SeasonPage = () => {
   const result = evaluateMatches([
@@ -39,6 +40,7 @@ const SeasonPage = () => {
 
       <DivideLine />
       {/* 순위 */}
+      <TotalRank />
 
       <DivideLine />
       {/* 히스토리 */}
