@@ -1,68 +1,41 @@
 "use client";
 
-import { EventProp } from "@/Types/types";
 import Banner from "@/components/Banner";
+import PlanBanner from "@/components/Banner/PlanBanner";
 import MainLink from "@/components/Button/MainLink";
+import SeasonLinkBtn from "@/components/Button/SeasonLinkBtn";
 import Container from "@/components/_Container";
-import { useEffect, useState } from "react";
 
 import styled from "styled-components";
 
 export default function Sixers() {
-  const [weekSchedule, setWeekSchedule] =
-    useState<string>("이번 주 일정이 없습니다.");
-  const [schedule, setSchedule] = useState("");
-
-  const onLoadData = async () => {
-    try {
-      const fetchData = await fetch("/data/season.json");
-      const resData = await fetchData.json();
-
-      const today = new Date();
-
-      const nextEvent = resData.find((event: EventProp) => {
-        const eventDate = new Date(event.date);
-        return eventDate >= today;
-      });
-
-      setWeekSchedule(
-        nextEvent ? `${nextEvent.comment}` : "예정된 일정이 없습니다."
-      );
-
-      setSchedule(nextEvent ? `🗓️${nextEvent.date}` : "");
-    } catch (error) {
-      console.error("Error loading event data:", error);
-    }
-  };
-
-  useEffect(() => {
-    onLoadData();
-  }, []);
-
   return (
     <>
       <Banner />
 
       <Container>
-        <PlanBanner>
+        {/* <PlanBanner>
           <PlanDate>{schedule}</PlanDate>
           <PlanText>{weekSchedule}</PlanText>
-        </PlanBanner>
+        </PlanBanner> */}
 
-        <AlarmBanner>
+        {/* <AlarmBanner>
           기존 시즌 정보는 [식서스 컨텐츠] 메뉴에 있습니다.
-        </AlarmBanner>
+        </AlarmBanner> */}
+        <PlanBanner />
+
+        <SeasonLinkBtn season={6} />
 
         <LinkList>
           {/* 공지사항 */}
-          <MainLink
+          {/* <MainLink
             url="/Notice"
             title="식서스 공지사항"
             subtitle="Sixers Notice"
-          />
+          /> */}
 
           {/* 식서스 룰북 */}
-          <MainLink url="/Rules" title="식서스 회칙" subtitle="Sixers Rules" />
+          {/* <MainLink url="/Rules" title="식서스 회칙" subtitle="Sixers Rules" /> */}
 
           {/* 식서스 뉴스, 매거진, 시즌 정보 */}
           <MainLink
@@ -72,25 +45,16 @@ export default function Sixers() {
           />
 
           {/* 식서스 일정 */}
-          <MainLink
+          {/* <MainLink
             url="/Calendar"
             title="식서스 일정"
             subtitle="Sixers Calendar"
-          />
+          /> */}
         </LinkList>
       </Container>
     </>
   );
 }
-
-const AlarmBanner = styled.p`
-  width: 100%;
-  text-align: center;
-  font-size: 14px;
-  background-color: #121212;
-  color: #fff;
-  padding: 4px 0;
-`;
 
 const LinkList = styled.div`
   width: 100%;
@@ -100,26 +64,4 @@ const LinkList = styled.div`
   align-items: center;
   gap: 16px;
   margin: 24px 0;
-`;
-
-const PlanBanner = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-
-  padding: 8px 0;
-  border-radius: 8px;
-`;
-
-const PlanDate = styled.span`
-  font-size: 12px;
-  font-weight: 700;
-`;
-
-const PlanText = styled.span`
-  font-size: 18px;
-  font-weight: 700;
 `;

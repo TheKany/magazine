@@ -4,14 +4,18 @@ import MainLink from "./MainLink";
 import Image from "next/image";
 import Arrowsvg from "../svg/Arrow";
 
-const SeasonLinkBtn = () => {
+type Props = {
+  season: number;
+};
+
+const SeasonLinkBtn = ({ season }: Props) => {
   return (
     <SeasonButtonContainer>
       <SeasonButtonInnerContainer>
         <MainLink
           url="Contents/Season"
-          title="시즌 5 리그 정보"
-          subtitle="Sixers Season 5"
+          title={`시즌 ${season} 리그 정보`}
+          subtitle={`Sixers Season ${season}`}
         />
         <ImgBox>
           <Image
@@ -37,6 +41,7 @@ const SeasonButtonContainer = styled.div`
   padding: 8px;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.06) 2px 2px 4px 4px inset;
+  margin: 16px 0;
 `;
 
 const SeasonButtonInnerContainer = styled.div`
