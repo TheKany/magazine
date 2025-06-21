@@ -20,14 +20,14 @@ const matchList: {
       {
         team1: {
           name: "리바운드",
-          logo: "/img/reba.png",
+          logo: "/img/season5/reba.png",
           total: 37,
           quarters: [9, 15, 23, 37],
           isWinner: false,
         },
         team2: {
           name: "청용열차",
-          logo: "/img/dragon.png",
+          logo: "/img/season5/dragon.png",
           total: 65,
           quarters: [16, 37, 53, 65],
           isWinner: true,
@@ -36,14 +36,14 @@ const matchList: {
       {
         team1: {
           name: "상승",
-          logo: "/img/up.png",
+          logo: "/img/season5/up.png",
           total: 55,
           quarters: [14, 30, 42, 55],
           isWinner: true,
         },
         team2: {
           name: "리바운드",
-          logo: "/img/reba.png",
+          logo: "/img/season5/reba.png",
           total: 38,
           quarters: [5, 14, 26, 38],
           isWinner: false,
@@ -52,14 +52,14 @@ const matchList: {
       {
         team1: {
           name: "청용열차",
-          logo: "/img/dragon.png",
+          logo: "/img/season5/dragon.png",
           total: 43,
           quarters: [9, 23, 27, 38],
           isWinner: false,
         },
         team2: {
           name: "상승",
-          logo: "/img/up.png",
+          logo: "/img/season5/up.png",
           total: 43,
           quarters: [8, 21, 32, 43],
           isWinner: true,
@@ -73,14 +73,14 @@ const matchList: {
       {
         team1: {
           name: "리바운드",
-          logo: "/img/reba.png",
+          logo: "/img/season5/reba.png",
           total: 40,
           quarters: [10, 7, 12, 11],
           isWinner: false,
         },
         team2: {
           name: "상승",
-          logo: "/img/up.png",
+          logo: "/img/season5/up.png",
           total: 52,
           quarters: [13, 13, 6, 20],
           isWinner: true,
@@ -89,14 +89,14 @@ const matchList: {
       {
         team1: {
           name: "상승",
-          logo: "/img/up.png",
+          logo: "/img/season5/up.png",
           total: 35,
           quarters: [7, 9, 11, 8],
           isWinner: false,
         },
         team2: {
           name: "청용열차",
-          logo: "/img/dragon.png",
+          logo: "/img/season5/dragon.png",
           total: 36,
           quarters: [6, 13, 9, 8],
           isWinner: true,
@@ -105,14 +105,14 @@ const matchList: {
       {
         team1: {
           name: "청용열차",
-          logo: "/img/dragon.png",
+          logo: "/img/season5/dragon.png",
           total: 45,
           quarters: [9, 11, 13, 12],
           isWinner: true,
         },
         team2: {
           name: "리바운드",
-          logo: "/img/reba.png",
+          logo: "/img/season5/reba.png",
           total: 40,
           quarters: [12, 9, 6, 13],
           isWinner: false,
@@ -126,14 +126,14 @@ const matchList: {
       {
         team1: {
           name: "상승",
-          logo: "/img/up.png",
+          logo: "/img/season5/up.png",
           total: 30,
           quarters: [10, 6, 11, 3],
           isWinner: false,
         },
         team2: {
           name: "청용열차",
-          logo: "/img/dragon.png",
+          logo: "/img/season5/dragon.png",
           total: 37,
           quarters: [14, 16, 12, 7],
           isWinner: true,
@@ -142,14 +142,14 @@ const matchList: {
       {
         team1: {
           name: "리바운드",
-          logo: "/img/reba.png",
+          logo: "/img/season5/reba.png",
           total: 33,
           quarters: [6, 9, 13, 5],
           isWinner: false,
         },
         team2: {
           name: "청용열차",
-          logo: "/img/dragon.png",
+          logo: "/img/season5/dragon.png",
           total: 39,
           quarters: [6, 11, 13, 9],
           isWinner: true,
@@ -158,14 +158,14 @@ const matchList: {
       {
         team1: {
           name: "상승",
-          logo: "/img/up.png",
+          logo: "/img/season5/up.png",
           total: 63,
           quarters: [18, 21, 8, 16],
           isWinner: true,
         },
         team2: {
           name: "리바운드",
-          logo: "/img/reba.png",
+          logo: "/img/season5/reba.png",
           total: 38,
           quarters: [6, 6, 11, 15],
           isWinner: false,
@@ -179,14 +179,14 @@ const matchList: {
       {
         team1: {
           name: "리바운드",
-          logo: "/img/reba.png",
+          logo: "/img/season5/reba.png",
           total: 30,
           quarters: [15, 5, 6, 4],
           isWinner: false,
         },
         team2: {
           name: "청용열차",
-          logo: "/img/dragon.png",
+          logo: "/img/season5/dragon.png",
           total: 41,
           quarters: [7, 14, 9, 11],
           isWinner: true,
@@ -195,14 +195,14 @@ const matchList: {
       {
         team1: {
           name: "상승",
-          logo: "/img/up.png",
+          logo: "/img/season5/up.png",
           total: 38,
           quarters: [4, 8, 14, 12],
           isWinner: false,
         },
         team2: {
           name: "리바운드",
-          logo: "/img/reba.png",
+          logo: "/img/season5/reba.png",
           total: 43,
           quarters: [7, 17, 8, 11],
           isWinner: true,
@@ -211,14 +211,14 @@ const matchList: {
       {
         team1: {
           name: "청용열차",
-          logo: "/img/dragon.png",
+          logo: "/img/season5/dragon.png",
           total: 39,
           quarters: [14, 8, 14, 3],
           isWinner: true,
         },
         team2: {
           name: "상승",
-          logo: "/img/up.png",
+          logo: "/img/season5/up.png",
           total: 27,
           quarters: [2, 9, 9, 7],
           isWinner: false,
@@ -232,14 +232,14 @@ const matchList: {
       {
         team1: {
           name: "상승",
-          logo: "/img/up.png",
+          logo: "/img/season5/up.png",
           total: 40,
           quarters: [9, 12, 10, 9],
           isWinner: false,
         },
         team2: {
           name: "리바운드",
-          logo: "/img/reba.png",
+          logo: "/img/season5/reba.png",
           total: 54,
           quarters: [12, 16, 20, 6],
           isWinner: true,
@@ -248,14 +248,14 @@ const matchList: {
       {
         team1: {
           name: "리바운드",
-          logo: "/img/reba.png",
+          logo: "/img/season5/reba.png",
           total: 34,
           quarters: [15, 4, 6, 9],
           isWinner: false,
         },
         team2: {
           name: "청용열차",
-          logo: "/img/dragon.png",
+          logo: "/img/season5/dragon.png",
           total: 45,
           quarters: [13, 8, 14, 10],
           isWinner: true,
@@ -264,14 +264,14 @@ const matchList: {
       {
         team1: {
           name: "청용열차",
-          logo: "/img/dragon.png",
+          logo: "/img/season5/dragon.png",
           total: 38,
           quarters: [11, 4, 8, 15],
           isWinner: false,
         },
         team2: {
           name: "상승",
-          logo: "/img/up.png",
+          logo: "/img/season5/up.png",
           total: 50,
           quarters: [10, 9, 10, 21],
           isWinner: true,

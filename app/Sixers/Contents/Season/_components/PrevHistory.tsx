@@ -14,59 +14,59 @@ const matchList: {
   date: string;
   history: { team1: TeamData; team2: TeamData }[];
 }[] = [
-  // {
-  //   date: "05.17",
-  //   history: [
-  //     {
-  //       team1: {
-  //         name: "리바운드",
-  //         logo: "/img/reba.png",
-  //         total: 37,
-  //         quarters: [9, 15, 23, 37],
-  //         isWinner: false,
-  //       },
-  //       team2: {
-  //         name: "청용열차",
-  //         logo: "/img/dragon.png",
-  //         total: 65,
-  //         quarters: [16, 37, 53, 65],
-  //         isWinner: true,
-  //       },
-  //     },
-  //     {
-  //       team1: {
-  //         name: "상승",
-  //         logo: "/img/up.png",
-  //         total: 55,
-  //         quarters: [14, 30, 42, 55],
-  //         isWinner: true,
-  //       },
-  //       team2: {
-  //         name: "리바운드",
-  //         logo: "/img/reba.png",
-  //         total: 38,
-  //         quarters: [5, 14, 26, 38],
-  //         isWinner: false,
-  //       },
-  //     },
-  //     {
-  //       team1: {
-  //         name: "청용열차",
-  //         logo: "/img/dragon.png",
-  //         total: 43,
-  //         quarters: [9, 23, 27, 38],
-  //         isWinner: false,
-  //       },
-  //       team2: {
-  //         name: "상승",
-  //         logo: "/img/up.png",
-  //         total: 43,
-  //         quarters: [8, 21, 32, 43],
-  //         isWinner: true,
-  //       },
-  //     },
-  //   ],
-  // },
+  {
+    date: "06.21",
+    history: [
+      {
+        team1: {
+          name: "승부사",
+          logo: "/img/season6/teamWhite.png",
+          total: 45,
+          quarters: [6, 12, 20, 7],
+          isWinner: true,
+        },
+        team2: {
+          name: "뀨♥️키즈",
+          logo: "/img/season6/teamBlack.png",
+          total: 33,
+          quarters: [9, 14, 4, 6],
+          isWinner: false,
+        },
+      },
+      {
+        team1: {
+          name: "뀨♥️키즈",
+          logo: "/img/season6/teamBlack.png",
+          total: 35,
+          quarters: [7, 13, 7, 8],
+          isWinner: false,
+        },
+        team2: {
+          name: "籠口",
+          logo: "/img/season6/teamPurple.png",
+          total: 37,
+          quarters: [5, 11, 10, 11],
+          isWinner: true,
+        },
+      },
+      {
+        team1: {
+          name: "籠口",
+          logo: "/img/season6/teamPurple.png",
+          total: 43,
+          quarters: [8, 12, 12, 11],
+          isWinner: false,
+        },
+        team2: {
+          name: "승부사",
+          logo: "/img/season6/teamWhite.png",
+          total: 46,
+          quarters: [4, 9, 13, 20],
+          isWinner: true,
+        },
+      },
+    ],
+  },
 ];
 
 const PrevHistory = () => {
