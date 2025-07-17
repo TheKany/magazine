@@ -67,6 +67,59 @@ const matchList: {
       },
     ],
   },
+  {
+    date: "07.05",
+    history: [
+      {
+        team1: {
+          name: "승부사",
+          logo: "/img/season6/teamWhite.png",
+          total: 44,
+          quarters: [13, 14, 13, 4],
+          isWinner: true,
+        },
+        team2: {
+          name: "뀨♥️키즈",
+          logo: "/img/season6/teamBlack.png",
+          total: 43,
+          quarters: [10, 10, 16, 7],
+          isWinner: false,
+        },
+      },
+      {
+        team1: {
+          name: "뀨♥️키즈",
+          logo: "/img/season6/teamBlack.png",
+          total: 26,
+          quarters: [8, 8, 2, 8],
+          isWinner: false,
+        },
+        team2: {
+          name: "籠口",
+          logo: "/img/season6/teamPurple.png",
+          total: 49,
+          quarters: [11, 14, 8, 16],
+          isWinner: true,
+        },
+      },
+      {
+        team1: {
+          name: "籠口",
+          logo: "/img/season6/teamPurple.png",
+          total: 45,
+          quarters: [13, 10, 11, 11],
+          isWinner: false,
+        },
+        team2: {
+          name: "승부사",
+          logo: "/img/season6/teamWhite.png",
+          total: 47,
+          quarters: [2, 14, 12, 19],
+          isWinner: true,
+        },
+      },
+    ],
+  },
 ];
 
 const PrevHistory = () => {
