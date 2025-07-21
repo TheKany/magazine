@@ -12,9 +12,9 @@ const TotalRank = () => {
 
   // 시즌 6
   const [teams2, setTeams2] = useState([
-    { color: "white", name: "승부사's", win: 4, draw: 0, lose: 2 },
-    { color: "black", name: "뀨♥️키즈", win: 1, draw: 1, lose: 4 },
-    { color: "purple", name: "籠口(농구)", win: 3, draw: 1, lose: 2 },
+    { color: "white", name: "승부사's", win: 5, draw: 0, lose: 3 },
+    { color: "black", name: "뀨♥️키즈", win: 2, draw: 1, lose: 5 },
+    { color: "purple", name: "籠口(농구)", win: 4, draw: 1, lose: 3 },
   ]);
 
   const [sorted, setSorted] = useState(false);
