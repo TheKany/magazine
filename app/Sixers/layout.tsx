@@ -1,7 +1,7 @@
 import { Children } from "@/Types/types";
-import Navigation from "@/components/Navigation";
+import Navigation from "@/components/Nav/Navigation";
 import Title from "@/components/Title";
-import Wrapper from "@/components/_Wrapper";
+import Wrapper from "@/components/_common/Element/_Wrapper";
 
 const layout = ({ children }: Children) => {
   return (

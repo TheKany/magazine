@@ -2,7 +2,7 @@
 
 import GroupRule from "@/components/GroupRule";
 import LeagueRule from "@/components/LeagueRule";
-import Container from "@/components/_Container";
+import Container from "@/components/_common/Element/_Container";
 import React, { useState } from "react";
 import styled from "styled-components";
 

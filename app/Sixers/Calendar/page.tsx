@@ -1,8 +1,8 @@
 "use client";
 
 import { EventProp } from "@/Types/types";
-import ChevronLeft from "@/components/svg/ChevronLeft";
-import ChevronRight from "@/components/svg/ChevronRight";
+import ChevronLeft from "@/components/_common/svg/ChevronLeft";
+import ChevronRight from "@/components/_common/svg/ChevronRight";
 import dayjs from "dayjs";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";

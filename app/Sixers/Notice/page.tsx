@@ -1,7 +1,7 @@
 "use client";
 
 import AccordionBox from "@/components/Accordion";
-import Container from "@/components/_Container";
+import Container from "@/components/_common/Element/_Container";
 import React from "react";
 import styled from "styled-components";
 

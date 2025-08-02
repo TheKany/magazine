@@ -1,8 +1,8 @@
 "use client";
 
-import Card from "@/components/Button/Card";
+import Card from "@/components/_common/Button/Card";
 import CardContainer from "@/components/CardContainer";
-import Container from "@/components/_Container";
+import Container from "@/components/_common/Element/_Container";
 
 import React from "react";
 
