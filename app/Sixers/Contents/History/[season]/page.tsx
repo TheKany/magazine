@@ -1,6 +1,6 @@
 "use client";
 
-import Container from "@/components/_Container";
+import Container from "@/components/_common/Element/_Container";
 import styled from "styled-components";
 import TotalRank from "../_components/TotalRank";
 import PrevHistory from "../_components/PrevHistory";

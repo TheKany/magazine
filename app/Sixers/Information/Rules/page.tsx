@@ -2,7 +2,8 @@
 
 import GroupRule from "@/components/GroupRule";
 import LeagueRule from "@/components/LeagueRule";
-import Container from "@/components/_Container";
+import BackBtn from "@/components/_common/Button/BackBtn";
+import Container from "@/components/_common/Element/_Container";
 import React, { useState } from "react";
 import styled from "styled-components";
 
@@ -13,6 +14,7 @@ const RulePage = () => {
   };
   return (
     <Container>
+      <BackBtn />
       <ButtonContainer>
         <MenuButton onClick={() => onClickMenu(1)} $active={menu === 1}>
           회칙

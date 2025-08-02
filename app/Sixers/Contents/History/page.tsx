@@ -1,6 +1,6 @@
 "use client";
 
-import MainLink from "@/components/Button/MainLink";
+import MainLink from "@/components/_common/Button/MainLink";
 import React from "react";
 import styled from "styled-components";
 

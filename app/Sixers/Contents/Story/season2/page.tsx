@@ -1,7 +1,7 @@
 "use client";
 
 import { BASE_IMG_URL } from "@/app/config";
-import ImageBox from "@/components/ImageBox";
+import ImageBox from "@/components/_common/Element/ImageBox";
 import React from "react";
 import styled from "styled-components";
 

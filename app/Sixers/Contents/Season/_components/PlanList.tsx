@@ -1,6 +1,6 @@
 "use client";
 
-import BallStamp from "@/components/svg/BallStamp";
+import BallStamp from "@/components/_common/svg/BallStamp";
 import { handleSeasonData } from "@/util/handleSeasonData";
 import React from "react";
 import styled from "styled-components";

@@ -2,9 +2,9 @@
 
 import Banner from "@/components/Banner";
 import PlanBanner from "@/components/Banner/PlanBanner";
-import MainLink from "@/components/Button/MainLink";
-import SeasonLinkBtn from "@/components/Button/SeasonLinkBtn";
-import Container from "@/components/_Container";
+import MainLink from "@/components/_common/Button/MainLink";
+import SeasonLinkBtn from "@/components/_common/Button/SeasonLinkBtn";
+import Container from "@/components/_common/Element/_Container";
 
 import styled from "styled-components";
 

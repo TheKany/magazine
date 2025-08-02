@@ -4,7 +4,7 @@
 import Image from "next/image";
 import Slider from "react-slick";
 import { BASE_IMG_URL } from "@/app/config";
-import Wrapper from "./_Wrapper";
+import Wrapper from "./_common/Element/_Wrapper";
 import styled from "styled-components";
 
 // const Fireworks = dynamic(() => import("./Lottie/Fireworks"), {
