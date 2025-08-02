@@ -1,7 +1,7 @@
 import { BASE_IMG_URL } from "@/app/config";
 import React from "react";
 import styled from "styled-components";
-import ImageBox from "../ImageBox";
+import ImageBox from "../Element/ImageBox";
 
 type Props = {
   season: string;

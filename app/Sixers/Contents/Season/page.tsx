@@ -1,7 +1,7 @@
 "use client";
 
 import PlanBanner from "@/components/Banner/PlanBanner";
-import Container from "@/components/_Container";
+import Container from "@/components/_common/Element/_Container";
 import { evaluateMatches } from "@/util/handlePlayData";
 import styled from "styled-components";
 import PlanList from "./_components/PlanList";

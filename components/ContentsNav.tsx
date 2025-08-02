@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import React from "react";
 import styled from "styled-components";
-import BackBtn from "./Button/BackBtn";
+import BackBtn from "./_common/Button/BackBtn";
 
 const ContentsNav = () => {
   const pathname = usePathname();
