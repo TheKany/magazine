@@ -25,25 +25,25 @@ const BottomNav = () => {
          * info: 공지사항, 회칙, 경기 규칙
          */}
         <MenuBox>
-          <MenuBtn onClick={() => handleNavigation("Sixers/Information")}>
+          <MenuBtn onClick={() => handleNavigation("/Sixers/Information")}>
             <Image
               src={"/img/common/nav/nav-notice.webp"}
               alt="공지사항"
               width={25}
               height={25}
             />
-            <MenuText $isActive={pathname.includes("Sixers/Information")}>
+            <MenuText $isActive={pathname.includes("/Sixers/Information")}>
               식서스 안내
             </MenuText>
           </MenuBtn>
         </MenuBox>
 
         {/*
-         * url: /Sixers/Rules
+         * url: /Sixers/InGameSeason
          * info: 현 시즌 정보
          */}
         <MenuBox>
-          <MenuBtn onClick={() => handleNavigation("/Sixers/Rules")}>
+          <MenuBtn onClick={() => handleNavigation("/Sixers/InGameSeason")}>
             <Image
               src={"/img/common/nav/nav-season.webp"}
               alt="현 시즌 정보"
@@ -51,7 +51,7 @@ const BottomNav = () => {
               height={15}
               style={{ marginTop: 5 }}
             />
-            <MenuText $isActive={pathname.includes("/Sixers/Rules")}>
+            <MenuText $isActive={pathname.includes("/Sixers/InGameSeason")}>
               시즌정보
             </MenuText>
           </MenuBtn>
@@ -93,14 +93,14 @@ const BottomNav = () => {
          * info: 어플 세팅
          */}
         <MenuBox>
-          <MenuBtn onClick={() => handleNavigation("/Sixers/Settings")}>
+          <MenuBtn onClick={() => handleNavigation("/Sixers/Setting")}>
             <Image
               src={"/img/common/nav/nav-setting.webp"}
               alt="설정"
               width={25}
               height={25}
             />
-            <MenuText $isActive={pathname.includes("/Sixers/Settings")}>
+            <MenuText $isActive={pathname.includes("/Sixers/Setting")}>
               설정
             </MenuText>
           </MenuBtn>
