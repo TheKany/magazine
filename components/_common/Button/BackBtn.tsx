@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import Arrowsvg from "../svg/Arrow";
 import styled from "styled-components";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const BackBtn = () => {
   const router = useRouter();
@@ -12,7 +12,7 @@ const BackBtn = () => {
   };
   return (
     <BackButton onClick={onClickBack}>
-      <Arrowsvg />
+      <Image src={"/back.svg"} alt="뒤로가기" width={100} height={30} />
     </BackButton>
   );
 };
@@ -22,5 +22,5 @@ export default BackBtn;
 const BackButton = styled.button`
   background-color: transparent;
   border: none;
-  transform: rotate(180deg);
+  margin: 8px 0;
 `;

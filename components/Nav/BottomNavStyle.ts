@@ -8,7 +8,7 @@ export const NavContainer = styled.div`
   grid-template-columns: repeat(5, 1fr);
   place-content: center;
   place-items: center;
-  background-color: transparent;
+  background-color: #f4f5f7;
 
   padding: 8px;
 `;

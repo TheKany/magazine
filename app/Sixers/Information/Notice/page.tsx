@@ -1,6 +1,7 @@
 "use client";
 
 import AccordionBox from "@/components/Accordion";
+import BackBtn from "@/components/_common/Button/BackBtn";
 import Container from "@/components/_common/Element/_Container";
 import React from "react";
 import styled from "styled-components";
@@ -8,6 +9,7 @@ import styled from "styled-components";
 const NoticePage = () => {
   return (
     <Container>
+      <BackBtn />
       <Title>공지사항</Title>
 
       <AccordionBox title="회비 안내">
@@ -25,7 +27,7 @@ export default NoticePage;
 const Title = styled.p`
   font-size: 25px;
   font-weight: 700;
-  padding: 16px 0;
+  padding-bottom: 16px;
 `;
 
 const Text = styled.p`
