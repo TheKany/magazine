@@ -9,7 +9,7 @@ const Title = () => {
     <Container>
       <Link href={"/"} style={{ position: "relative" }}>
         <Image
-          src={`${BASE_IMG_URL}/logo/logo_blackWin.svg`}
+          src={`${BASE_IMG_URL}/logo/blackWin.webp`}
           alt="타이틀"
           width={120}
           height={36}
