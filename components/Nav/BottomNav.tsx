@@ -3,9 +3,9 @@
 import { usePathname, useRouter } from "next/navigation";
 import Wrapper from "../_common/Element/_Wrapper";
 import Image from "next/image";
-import { MenuBox, MenuBtn, MenuText, NavContainer } from "./navStyle";
+import { MenuBox, MenuBtn, MenuText, NavContainer } from "./BottomNavStyle";
 
-const Navigation = () => {
+const BottomNav = () => {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -110,4 +110,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default BottomNav;
