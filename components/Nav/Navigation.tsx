@@ -21,18 +21,18 @@ const Navigation = () => {
     <Wrapper>
       <NavContainer>
         {/*
-         * url: /Sixers/Notice
+         * url: /Sixers/Information/*
          * info: 공지사항, 회칙, 경기 규칙
          */}
         <MenuBox>
-          <MenuBtn onClick={() => handleNavigation("/Sixers/Notice")}>
+          <MenuBtn onClick={() => handleNavigation("Sixers/Information")}>
             <Image
               src={"/img/common/nav/nav-notice.webp"}
               alt="공지사항"
               width={25}
               height={25}
             />
-            <MenuText $isActive={pathname.includes("/Sixers/Notice")}>
+            <MenuText $isActive={pathname.includes("Sixers/Information")}>
               식서스 안내
             </MenuText>
           </MenuBtn>

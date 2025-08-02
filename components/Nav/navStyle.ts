@@ -36,3 +36,6 @@ export const MenuText = styled.p<{ $isActive: boolean }>`
   padding: 2px 4px;
   border-radius: 4px;
 `;
+
+// #492A8D
+// #e84255
