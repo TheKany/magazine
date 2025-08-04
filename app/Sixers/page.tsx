@@ -24,7 +24,7 @@ export default function Sixers() {
         </AlarmBanner> */}
         <PlanBanner />
 
-        <SeasonLinkBtn season={6} />
+        {/* <SeasonLinkBtn season={6} /> */}
 
         <LinkList>
           {/* 공지사항 */}
@@ -38,11 +38,11 @@ export default function Sixers() {
           {/* <MainLink url="/Rules" title="식서스 회칙" subtitle="Sixers Rules" /> */}
 
           {/* 식서스 뉴스, 매거진, 시즌 정보 */}
-          <MainLink
+          {/* <MainLink
             url="/Contents"
             title="식서스 컨텐츠"
             subtitle="Sixers Contents"
-          />
+          /> */}
 
           {/* 식서스 일정 */}
           {/* <MainLink
