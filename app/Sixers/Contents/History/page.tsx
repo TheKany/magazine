@@ -10,7 +10,13 @@ const History = () => {
       <MainLink
         url="Contents/History/5"
         title="식서스 시즌 5"
-        subtitle="Sixers Season 5"
+        subtitle="2025.03 - 2025.05"
+      />
+
+      <MainLink
+        url="Contents/History/6"
+        title="식서스 시즌 6"
+        subtitle="2025.06 - 2025.08"
       />
     </LinkList>
   );

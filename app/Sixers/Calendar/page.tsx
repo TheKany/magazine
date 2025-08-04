@@ -3,6 +3,7 @@
 import { EventProp } from "@/Types/types";
 import ChevronLeft from "@/components/_common/svg/ChevronLeft";
 import ChevronRight from "@/components/_common/svg/ChevronRight";
+import seasonWeekData from "@/lib/query/seasonInfo";
 import dayjs from "dayjs";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
@@ -24,17 +25,11 @@ const CalendarPage = () => {
   const emptyDays = Array.from({ length: startDay }, () => null);
 
   const onLoadData = async () => {
-    try {
-      const fetchData = await fetch("/data/season.json");
-      const resData = await fetchData.json();
-      setEventDate(resData);
-    } catch (error) {
-      console.error("Error loading event data:", error);
-    }
+    const resData = await seasonWeekData();
+    setEventDate(resData);
   };
 
   const onClickEventDate = (data: EventProp) => {
-    console.log(data);
     setSelectedEvent(data);
   };
 
@@ -46,7 +41,10 @@ const CalendarPage = () => {
     <>
       <EventDisplay>
         <EventDate>{selectedEvent?.date}</EventDate>
-        <EventComment>{selectedEvent?.comment}</EventComment>
+        <p>
+          {selectedEvent?.season_id !== 0 ? selectedEvent?.season_id : null}
+        </p>
+        <EventComment>{selectedEvent?.type}</EventComment>
       </EventDisplay>
 
       <CalendarContainer>
@@ -86,6 +84,11 @@ const CalendarPage = () => {
           })}
         </DaysGrid>
       </CalendarContainer>
+
+      {/* 월 컨테이너 */}
+      <div>
+        <p></p>
+      </div>
     </>
   );
 };
@@ -149,14 +152,16 @@ const Day = styled.div<{ $eventType?: string }>`
   border-radius: 4px;
   cursor: pointer;
   background-color: ${({ $eventType }) =>
-    $eventType === "비시즌"
+    $eventType === "시즌 전반기"
       ? "#f0e68c"
-      : $eventType === "프리시즌"
+      : $eventType === "시즌 후반기"
       ? "#87cefa"
-      : $eventType === "시즌"
-      ? "#ffcccb"
       : $eventType === "이벤트"
+      ? "#ffcccb"
+      : $eventType === "프리시즌"
       ? "#98fb98"
+      : $eventType === "비시즌"
+      ? "#e5c9ee"
       : "transparent"};
   &:hover {
     background-color: #f1f1f1;
