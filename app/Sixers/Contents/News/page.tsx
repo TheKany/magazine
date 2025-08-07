@@ -1,6 +1,7 @@
 "use client";
 
 import { BASE_IMG_URL } from "@/app/config";
+import BackBtn from "@/components/_common/Button/BackBtn";
 import ImageBox from "@/components/_common/Element/ImageBox";
 import Container from "@/components/_common/Element/_Container";
 import React from "react";
@@ -9,6 +10,7 @@ import styled from "styled-components";
 const NewsPage = () => {
   return (
     <Container>
+      <BackBtn />
       <NewsContainer>
         {Array.from({ length: 11 }).map((_, idx) => {
           return (

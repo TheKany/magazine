@@ -35,9 +35,9 @@ const PlanBanner = () => {
 
   return (
     <PlanContainer $eventType={gameType}>
-      <PlanDate>{schedule}</PlanDate>
+      <p>이번주 경기 정보</p>
       <PlanInfoBox>
-        <p>이번주 경기 정보</p>
+        <PlanDate>{schedule}</PlanDate>
         <PlanText>🏀{gameType}🏀</PlanText>
       </PlanInfoBox>
     </PlanContainer>
@@ -48,45 +48,38 @@ export default PlanBanner;
 
 const PlanContainer = styled.div<{ $eventType?: string }>`
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
   gap: 4px;
 
   padding: 8px 0;
-  border-radius: 8px;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 16px;
 
-  background-color: ${({ $eventType }) =>
-    $eventType === "비시즌"
-      ? "#ebd6b1"
-      : $eventType === "프리시즌"
-      ? "#58B4F1"
-      : $eventType === "시즌"
-      ? "#F18F88"
-      : $eventType === "이벤트"
-      ? "#88D199"
-      : "transparent"};
-`;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
 
-const PlanDate = styled.span`
-  font-size: 24px;
-  font-weight: 700;
+  & p {
+    font-size: 14px;
+  }
 `;
 
 const PlanInfoBox = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 8px;
-
-  & :nth-child(1) {
-    font-size: 14px;
-    font-weight: 500;
-  }
 `;
 
 const PlanText = styled.span`
+  font-size: 18px;
+  font-weight: 700;
+`;
+
+const PlanDate = styled.span`
   font-size: 18px;
   font-weight: 700;
 `;

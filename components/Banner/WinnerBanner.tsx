@@ -11,10 +11,11 @@ const WinnerBanner = () => {
   return (
     <>
       <Fireworks />
+      <WinnerText>🎇 籠口 팀 우승을 축하드립니다! 🎇</WinnerText>
 
       <ImageBox
         src={`${BASE_IMG_URL}/banner/season6_winner.png`}
-        alt="season5 우승팀"
+        alt="season6 우승팀"
         width={0}
         height={0}
         sizes="100vw"
@@ -22,7 +23,6 @@ const WinnerBanner = () => {
         unoptimized
         priority
       />
-      <WinnerText>🎇 籠口 팀 우승을 축하드립니다! 🎇</WinnerText>
     </>
   );
 };

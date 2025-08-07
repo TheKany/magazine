@@ -1,6 +1,7 @@
 "use client";
 
 import { BASE_IMG_URL } from "@/app/config";
+import BackBtn from "@/components/_common/Button/BackBtn";
 import ImageBox from "@/components/_common/Element/ImageBox";
 import Container from "@/components/_common/Element/_Container";
 import styled from "styled-components";
@@ -41,6 +42,7 @@ const LeaderPage = () => {
 
   return (
     <Container>
+      <BackBtn />
       <Box>
         {data.map((el) => (
           <div key={el.season}>
