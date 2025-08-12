@@ -2,28 +2,36 @@
 
 import seasonWeekData from "@/lib/query/seasonInfo";
 import { EventProp } from "@/Types/types";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import Slider from "react-slick";
 import styled from "styled-components";
 
 const PlanBanner = () => {
-  const [schedule, setSchedule] = useState("");
-  const [gameType, setGameType] = useState("");
+  const setting = {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+  //   const [schedule, setSchedule] = useState("");
+  //   const [gameType, setGameType] = useState("");
+  const [planList, setPlanList] = useState<EventProp[]>([]);
   const onLoadData = async () => {
     try {
       const resData = await seasonWeekData();
-      const today = new Date();
+      //   const today = new Date();
 
-      const nextEvent = resData.find((event: EventProp) => {
-        const eventDate = new Date(event.date);
-        return eventDate >= today;
-      });
+      setPlanList(resData);
 
-      const yyyy = today.getFullYear();
-      const nextEventDate = nextEvent.date.replace(`${yyyy}-`, "");
-      const nextEventDateChangeFormat = nextEventDate.replace("-", "/");
+      //   const nextEvent = resData.find((event: EventProp) => {
+      //     const eventDate = new Date(event.date);
+      //     return eventDate >= today;
+      //   });
 
-      setSchedule(nextEvent ? `${nextEventDateChangeFormat}` : "");
-      setGameType(nextEvent.type);
+      //   const yyyy = today.getFullYear();
+      //   const nextEventDate = nextEvent.date.replace(`${yyyy}-`, "");
+      //   const nextEventDateChangeFormat = nextEventDate.replace("-", "/");
+
+      //   setSchedule(nextEvent ? `${nextEventDateChangeFormat}` : "");
+      //   setGameType(nextEvent.type);
     } catch (error) {
       console.error("Error loading event data:", error);
     }
@@ -34,32 +42,33 @@ const PlanBanner = () => {
   }, []);
 
   return (
-    <PlanContainer $eventType={gameType}>
-      <p>이번주 경기 정보</p>
-      <PlanInfoBox>
-        <PlanDate>{schedule}</PlanDate>
-        <PlanText>🏀{gameType}🏀</PlanText>
-      </PlanInfoBox>
-    </PlanContainer>
+    <Slider {...setting}>
+      {planList.map((event: EventProp, index: number) => (
+        <PlanContainer key={index} $eventType={event.type}>
+          <p>이번주 경기 정보</p>
+          <PlanInfoBox>
+            <PlanDate>{event.date.replace(/-/g, "/")}</PlanDate>
+            <PlanText>🏀{event.type}🏀</PlanText>
+          </PlanInfoBox>
+        </PlanContainer>
+      ))}
+      {/* <PlanContainer $eventType={gameType}>
+        <p>이번주 경기 정보</p>
+        <PlanInfoBox>
+          <PlanDate>{schedule}</PlanDate>
+          <PlanText>🏀{gameType}🏀</PlanText>
+        </PlanInfoBox>
+      </PlanContainer> */}
+    </Slider>
   );
 };
 
 export default PlanBanner;
 
 const PlanContainer = styled.div<{ $eventType?: string }>`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 4px;
-
-  padding: 8px 0;
-  width: 80%;
-  margin: 0 auto;
-  margin-bottom: 16px;
-
-  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  background-color: #ecd2d2;
+  padding: 24px;
   border-radius: 4px;
 
   & p {

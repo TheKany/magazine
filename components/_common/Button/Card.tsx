@@ -1,5 +1,4 @@
 import { BASE_IMG_URL } from "@/app/config";
-import React from "react";
 import styled from "styled-components";
 import ImageBox from "../Element/ImageBox";
 
@@ -22,7 +21,7 @@ const Card = ({ season }: Props) => {
             unoptimized
           />
 
-          <Title>식서스 시즌 {season} 호</Title>
+          <Title>식서스 시즌 {Number(season)} 호</Title>
         </DivContainer>
       );
 
@@ -39,7 +38,7 @@ const Card = ({ season }: Props) => {
             unoptimized
           />
 
-          <Title>식서스 시즌 {season} 호</Title>
+          <Title>식서스 시즌 {Number(season)} 호</Title>
         </Container>
       );
   }

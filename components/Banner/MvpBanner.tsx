@@ -1,9 +1,8 @@
 "use client";
 
-import React from "react";
-import ImageBox from "../_common/Element/ImageBox";
 import { BASE_IMG_URL } from "@/app/config";
 import styled from "styled-components";
+import ImageBox from "../_common/Element/ImageBox";
 
 const MvpBanner = () => {
   return (
