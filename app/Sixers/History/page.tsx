@@ -41,4 +41,5 @@ const LinkList = styled.div`
   align-items: center;
   gap: 16px;
   margin: 24px 0;
+  padding: 0 8px;
 `;
