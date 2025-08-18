@@ -77,7 +77,7 @@ const BottomNav = () => {
         <MenuBox>
           <MenuBtn onClick={() => handleNavigation("/Sixers/Contents")}>
             <Image
-              src={"/img/common/nav/nav-Contents.webp"}
+              src={"/img/common/nav/nav-contents.webp"}
               alt="설정"
               width={25}
               height={25}
