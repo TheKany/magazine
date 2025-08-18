@@ -1,6 +1,7 @@
 "use client";
 
 import { BASE_IMG_URL } from "@/app/config";
+import FloatImg from "@/components/_common/Element/FloatImg";
 import ImageBox from "@/components/_common/Element/ImageBox";
 import React from "react";
 import styled from "styled-components";
@@ -27,7 +28,6 @@ const StoryPage = () => {
           height={0}
           sizes="100vw"
           style={{ width: "100%", height: "auto" }}
-          unoptimized
         />
       </FirstImg>
 
@@ -44,11 +44,10 @@ const StoryPage = () => {
               감사드립니다. 팀원형님들이 모두 한발짝 더 뛰어주셔서
               우승할수있었던것같습니다.
             </Text>
-            <InsideImg
-              $url={`${BASE_IMG_URL}/season/s4/s4-2.png`}
-              $way="right"
+            <FloatImg
               src={`${BASE_IMG_URL}/season/s4/s4-2.png`}
               alt="이미지2"
+              way="right"
               width={160}
               height={130}
             />
@@ -89,25 +88,24 @@ const StoryPage = () => {
         </QText>
 
         <FlexBox>
-          <InsideImg
-            $url={`${BASE_IMG_URL}/season/s4/s4-5.png`}
-            $way="right"
+          <FloatImg
             src={`${BASE_IMG_URL}/season/s4/s4-5.png`}
             alt="이미지2"
-            width={200}
+            way="right"
+            width={100}
             height={180}
           />
+
           <Text $break={true}>
             우승하려고 다들 열심히 뛰는거 자체가 재밌고 좋았습니다. 막내인데도
             팀장의견을 적극 수렴해주시는것도 너무 감사했습니다. 이번시즌동안
             득녀도 하고 일도 많고 당직도 많아서 힘들었는데 다들 도와주셔서 매주
             즐겁게 농구할 수 있었습니다 힘들었던점은 크게없는데 형준이가 농구를
             혼자하는게 쪼금 힘들었네요. 심지어 패스도못해서..
-            <InsideImg
-              $url={`${BASE_IMG_URL}/season/s4/s4-4.png`}
-              $way="right"
+            <FloatImg
               src={`${BASE_IMG_URL}/season/s4/s4-4.png`}
               alt="이미지2"
+              way="right"
               width={140}
               height={80}
               style={{ padding: "4px 0" }}
@@ -123,14 +121,14 @@ const StoryPage = () => {
           생각하시나요?
         </QText>
 
-        <InsideImg
-          $url={`${BASE_IMG_URL}/season/s4/s4-7.png`}
-          $way="left"
+        <FloatImg
           src={`${BASE_IMG_URL}/season/s4/s4-7.png`}
           alt="이미지2"
+          way="left"
           width={120}
           height={200}
         />
+
         <Text $break={true}>
           저도 mvp 투표때 고민 많이 해봤는데 다들 너무 잘해줘서 우리팀 전체가
           mvp라고 생각합니다. 사실 저 mvp받은거는 득녀축하기념이라고
@@ -149,12 +147,11 @@ const StoryPage = () => {
             <strong>한식이형</strong>을 뽑고싶습니다. 개업으로 바쁘셨는데도
             열심히 나와주셔서 감사합니다♥
           </Text>
-          <InsideImg
-            $url={`${BASE_IMG_URL}/season/s4/s4-6.png`}
-            $way="right"
+          <FloatImg
             src={`${BASE_IMG_URL}/season/s4/s4-6.png`}
             alt="이미지2"
-            width={200}
+            way="right"
+            width={110}
             height={180}
           />
         </FlexBox>
@@ -168,7 +165,6 @@ const StoryPage = () => {
         height={0}
         sizes="100vw"
         style={{ width: "100%", height: "auto" }}
-        unoptimized
       />
       <TextBox>
         <QText>
@@ -183,14 +179,14 @@ const StoryPage = () => {
 
       <TextBox>
         <QText>Q: 다음 시즌에 대한 각오 한마디 해주세요.</QText>
-        <InsideImg
-          $url={`${BASE_IMG_URL}/season/s4/s4-9.png`}
-          $way="left"
+        <FloatImg
           src={`${BASE_IMG_URL}/season/s4/s4-9.png`}
           alt="이미지2"
+          way="left"
           width={100}
           height={230}
         />
+
         <Text $break={false}>팀에 필요한 조각으로 열심히 뛰어보겠습니다.</Text>
       </TextBox>
 
@@ -212,7 +208,6 @@ const StoryPage = () => {
         height={0}
         sizes="100vw"
         style={{ width: "100%", height: "auto", margin: "24px 0" }}
-        unoptimized
       />
     </>
   );
@@ -253,12 +248,6 @@ const QText = styled.p`
 const StyleText = styled.span`
   color: #121212;
   font-size: 14px;
-`;
-
-const InsideImg = styled.img<{ $url: string; $way: string }>`
-  float: ${(props) => props.$way};
-  shape-outside: url(${(props) => props.$url});
-  shape-margin: 10px;
 `;
 
 const FlexBox = styled.div`

@@ -11,15 +11,15 @@ const ContentsPage = () => {
       <Wrapper>
         <LinkList>
           <MainLink
-            url="Contents/Story"
-            title="식서스 매거진"
-            subtitle="Sixers Magazine"
+            url="History/Leaders"
+            title="식서스 팀장"
+            subtitle="Sixers Season Leaders"
           />
 
           <MainLink
-            url="Contents/News"
-            title="식서스 뉴스"
-            subtitle="Sixers News"
+            url="History/PrevSeason"
+            title="식서스 시즌 정보"
+            subtitle="Sixers Season History"
           />
         </LinkList>
       </Wrapper>

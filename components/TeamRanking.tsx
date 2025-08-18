@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-// 승: 3점 | 무: 1점 | 패: 0점
-const TotalRank = () => {
+const TeamRanking = () => {
   const [teams, setTeams] = useState([
     { color: "white", name: "리바운드", win: 2, draw: 0, lose: 8 },
     { color: "black", name: "청용열차", win: 8, draw: 0, lose: 2 },
@@ -52,7 +53,7 @@ const TotalRank = () => {
   );
 };
 
-export default TotalRank;
+export default TeamRanking;
 
 const Table = styled.div`
   display: flex;
@@ -100,7 +101,7 @@ const GridTable = styled.div`
 
   /* 퍼플팀 */
   &.team-purple {
-    background-color: #371f4a;
+    background-color: #492a8d;
     color: #fff;
   }
 `;

@@ -19,21 +19,6 @@ const SeasonPage = () => {
 
   return (
     <Container>
-      {/* 진행율 */}
-      {/* <ProgressBar
-        progress={progress}
-        remainDate={remainDate}
-        totalDate={totalDate}
-      /> */}
-
-      {/* 순위 */}
-      {/* <TotalRank /> */}
-
-      {/* <DivideLine /> */}
-
-      {/* 팀간 순위 정보 */}
-      {/* <PrevHistory /> */}
-
       {/* 일정 */}
       <PlanBanner />
 

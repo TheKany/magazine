@@ -3,6 +3,7 @@ export interface Children {
 }
 
 export interface EventProp {
+  season_id: number;
   date: string;
   type: string;
   comment: string;

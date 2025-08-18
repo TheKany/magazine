@@ -1,31 +1,23 @@
 "use client";
 
+import { seasonThisWeekData } from "@/lib/query/seasonInfo";
 import { EventProp } from "@/Types/types";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import Slider from "react-slick";
 import styled from "styled-components";
 
 const PlanBanner = () => {
-  const [weekSchedule, setWeekSchedule] =
-    useState<string>("이번 주 일정이 없습니다.");
-  const [schedule, setSchedule] = useState("");
+  const setting = {
+    centerPadding: "60px",
+    slidesToShow: 1,
+  };
 
+  const [planList, setPlanList] = useState<EventProp[]>([]);
   const onLoadData = async () => {
     try {
-      const fetchData = await fetch("/data/season.json");
-      const resData = await fetchData.json();
+      const resData = await seasonThisWeekData();
 
-      const today = new Date();
-
-      const nextEvent = resData.find((event: EventProp) => {
-        const eventDate = new Date(event.date);
-        return eventDate >= today;
-      });
-
-      setWeekSchedule(
-        nextEvent ? `${nextEvent.comment}` : "예정된 일정이 없습니다."
-      );
-
-      setSchedule(nextEvent ? `🗓️${nextEvent.date}` : "");
+      setPlanList(resData);
     } catch (error) {
       console.error("Error loading event data:", error);
     }
@@ -36,33 +28,45 @@ const PlanBanner = () => {
   }, []);
 
   return (
-    <PlanContainer>
-      <PlanDate>{schedule}</PlanDate>
-      <PlanText>{weekSchedule}</PlanText>
-    </PlanContainer>
+    <Slider {...setting}>
+      {planList.map((event: EventProp, index: number) => (
+        <PlanContainer key={index} $eventType={event.type}>
+          <p>이번주 경기 정보</p>
+          <PlanInfoBox>
+            <PlanDate>{event.date.replace(/-/g, "/")}</PlanDate>
+            <PlanText>🏀{event.type}🏀</PlanText>
+          </PlanInfoBox>
+        </PlanContainer>
+      ))}
+    </Slider>
   );
 };
 
 export default PlanBanner;
 
-const PlanContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
+const PlanContainer = styled.div<{ $eventType?: string }>`
+  background-color: #ecd2d2;
+  padding: 24px;
+  border-radius: 4px;
 
-  padding: 8px 0;
-  border-radius: 8px;
+  & p {
+    font-size: 14px;
+  }
 `;
 
-const PlanDate = styled.span`
-  font-size: 12px;
-  font-weight: 700;
+const PlanInfoBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 `;
 
 const PlanText = styled.span`
+  font-size: 18px;
+  font-weight: 700;
+`;
+
+const PlanDate = styled.span`
   font-size: 18px;
   font-weight: 700;
 `;

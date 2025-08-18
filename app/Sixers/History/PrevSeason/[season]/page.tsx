@@ -11,19 +11,25 @@ const SeasonPage = () => {
 
   return (
     <Container>
-      <SeasonTitle>시즌 {param?.season}</SeasonTitle>
-      {/* 순위 */}
-      <TotalRank />
+      <Box>
+        <SeasonTitle>시즌 {param?.season}</SeasonTitle>
+        {/* 순위 */}
+        <TotalRank season={Number(param?.season)} />
 
-      <DivideLine />
+        <DivideLine />
 
-      {/* 팀간 순위 정보 */}
-      <PrevHistory />
+        {/* 팀간 순위 정보 */}
+        <PrevHistory season={Number(param?.season)} />
+      </Box>
     </Container>
   );
 };
 
 export default SeasonPage;
+
+const Box = styled.div`
+  padding: 0 16px;
+`;
 
 const SeasonTitle = styled.p`
   font-size: 24px;

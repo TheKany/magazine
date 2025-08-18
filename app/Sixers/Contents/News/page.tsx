@@ -1,6 +1,7 @@
 "use client";
 
 import { BASE_IMG_URL } from "@/app/config";
+import BackBtn from "@/components/_common/Button/BackBtn";
 import ImageBox from "@/components/_common/Element/ImageBox";
 import Container from "@/components/_common/Element/_Container";
 import React from "react";
@@ -9,9 +10,12 @@ import styled from "styled-components";
 const NewsPage = () => {
   return (
     <Container>
+      <BackBtn />
       <NewsContainer>
-        {Array.from({ length: 11 }).map((_, idx) => {
-          return (
+        {Array.from({ length: 11 })
+          .map((_, idx) => idx)
+          .reverse()
+          .map((idx) => (
             <ImageBox
               key={idx}
               src={`${BASE_IMG_URL}/news/news${idx}.png`}
@@ -22,8 +26,7 @@ const NewsPage = () => {
               style={{ width: "100%", height: "auto" }}
               unoptimized
             />
-          );
-        })}
+          ))}
       </NewsContainer>
     </Container>
   );
@@ -37,4 +40,5 @@ const NewsContainer = styled.div`
   align-content: center;
   flex-direction: column;
   gap: 16px;
+  padding: 0 16px;
 `;

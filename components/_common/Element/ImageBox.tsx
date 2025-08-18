@@ -4,18 +4,24 @@ import Image, { ImageProps } from "next/image";
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const ImageBox: React.FC<ImageProps> = (props) => {
+type Props = ImageProps & {
+  ratio?: `${number} / ${number}` | string;
+};
+
+const ImageBox: React.FC<Props> = ({ ratio = "16 / 9", fill, ...props }) => {
   const [loading, setLoading] = useState(true);
 
   return (
-    <ImageWrapper $loading={loading}>
+    <ImageWrapper $loading={loading} $isFill={!!fill} $ratio={ratio}>
       {loading && <SkeletonImage />}
       <Image
         {...props}
+        fill={fill}
         alt={props.alt}
-        onLoad={() => setLoading(false)}
+        onLoadingComplete={() => setLoading(false)}
         style={{
           ...props.style,
+          objectFit: props.style?.objectFit ?? "cover",
           opacity: loading ? 0 : 1,
           transition: "opacity 0.3s ease-in-out",
         }}
@@ -26,17 +32,32 @@ const ImageBox: React.FC<ImageProps> = (props) => {
 
 export default ImageBox;
 
-const ImageWrapper = styled.div<{ $loading: boolean }>`
+const ImageWrapper = styled.div<{
+  $loading: boolean;
+  $isFill: boolean;
+  $ratio: string;
+}>`
   position: relative;
   width: 100%;
-  min-height: ${(props) => (props.$loading ? "200px" : "auto")};
-  aspect-ratio: ${(props) => (props.$loading ? "16 / 9" : "")};
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ${({ $isFill }) => $isFill && `height: 100%;`}
+
+  ${({ $loading, $isFill, $ratio }) =>
+    $loading && !$isFill
+      ? `
+    min-height: 200px;
+    aspect-ratio: ${$ratio};
+  `
+      : ""}
 `;
 
 const SkeletonImage = styled.div`
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
   background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
   border-radius: 8px;
   background-size: 400% 100%;

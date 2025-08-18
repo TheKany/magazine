@@ -1,67 +1,118 @@
 "use client";
 
-import Banner from "@/components/Banner";
-import PlanBanner from "@/components/Banner/PlanBanner";
-import MainLink from "@/components/_common/Button/MainLink";
-import SeasonLinkBtn from "@/components/_common/Button/SeasonLinkBtn";
 import Container from "@/components/_common/Element/_Container";
-
+import { DivideLine } from "@/components/_common/Element/_DivideLine";
+import Wrapper from "@/components/_common/Element/_Wrapper";
+import ImageBox from "@/components/_common/Element/ImageBox";
+import MainImgBanner from "@/components/Banner/MainImgBanner";
+import { seasonThisWeekData } from "@/lib/query/seasonInfo";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-export default function Sixers() {
+type PlanTypes = {
+  id: number;
+  date: string;
+  trade: boolean;
+  type: string;
+};
+
+export default function Home() {
+  const router = useRouter();
+  const [weekPlan, setWeekPlan] = useState<PlanTypes | null>(null);
+  const onLoadData = async () => {
+    const resData = (await seasonThisWeekData()) as PlanTypes;
+
+    // 날짜 포멧 바꾸기
+    const y = new Date().getFullYear();
+    const newDate = resData.date.replace(`${y}-`, "").replace("-", "/");
+    const changeData = { ...resData, date: newDate };
+
+    setWeekPlan(changeData);
+  };
+
+  const onClickIngameSeason = () => {
+    router.push("Sixers/InGameSeason");
+  };
+
+  useEffect(() => {
+    onLoadData();
+  }, []);
+
   return (
-    <>
-      <Banner />
-
-      <Container>
-        {/* <PlanBanner>
-          <PlanDate>{schedule}</PlanDate>
-          <PlanText>{weekSchedule}</PlanText>
-        </PlanBanner> */}
-
-        {/* <AlarmBanner>
-          기존 시즌 정보는 [식서스 컨텐츠] 메뉴에 있습니다.
-        </AlarmBanner> */}
-        <PlanBanner />
-
-        <SeasonLinkBtn season={6} />
-
-        <LinkList>
-          {/* 공지사항 */}
-          {/* <MainLink
-            url="/Notice"
-            title="식서스 공지사항"
-            subtitle="Sixers Notice"
-          /> */}
-
-          {/* 식서스 룰북 */}
-          {/* <MainLink url="/Rules" title="식서스 회칙" subtitle="Sixers Rules" /> */}
-
-          {/* 식서스 뉴스, 매거진, 시즌 정보 */}
-          <MainLink
-            url="/Contents"
-            title="식서스 컨텐츠"
-            subtitle="Sixers Contents"
+    <Container>
+      <Wrapper>
+        <Box>
+          <ImageBox
+            src={"/img/common/bg/bg-main.webp"}
+            alt="메인페이지 배경"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "auto" }}
+            priority
+            unoptimized
           />
+          <MainImgBanner />
+        </Box>
 
-          {/* 식서스 일정 */}
-          {/* <MainLink
-            url="/Calendar"
-            title="식서스 일정"
-            subtitle="Sixers Calendar"
-          /> */}
-        </LinkList>
-      </Container>
-    </>
+        {/* 일정  */}
+        <Title>이번주 일정?</Title>
+        <PlanBox>
+          <span>{weekPlan?.date}</span>
+          <span>{weekPlan?.type}</span>
+        </PlanBox>
+
+        <DivideLine />
+
+        <BtnBox>
+          <SeasonButton onClick={onClickIngameSeason}>
+            Play Season 7
+          </SeasonButton>
+        </BtnBox>
+      </Wrapper>
+    </Container>
   );
 }
 
-const LinkList = styled.div`
-  width: 100%;
+const Box = styled.div`
+  position: relative;
+`;
+
+const Title = styled.p`
+  font-size: 16px;
+  font-family: "jua";
+  margin: 16px;
+`;
+
+const PlanBox = styled.section`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 16px;
-  margin: 24px 0;
+
+  & span {
+    font-size: 24px;
+    font-family: "SeoulAlrimTTF";
+    font-weight: 900;
+  }
+`;
+
+const BtnBox = styled.section`
+  width: 100%;
+  height: 80px;
+  max-width: 320px;
+  margin: 0 auto;
+  margin-bottom: 32px;
+`;
+
+const SeasonButton = styled.button`
+  font-size: 24px;
+  font-family: "FingerPaint";
+  color: #fff;
+  background-color: #492a8d;
+  border-radius: 25px;
+  width: 100%;
+  height: 100%;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 `;
