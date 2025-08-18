@@ -4,7 +4,7 @@ import { BASE_IMG_URL } from "@/app/config";
 import ImageBox from "@/components/_common/Element/ImageBox";
 import React from "react";
 import styled from "styled-components";
-import TeamRanking from "@/components/TeamRanking";
+// import TeamRanking from "@/components/TeamRanking";
 import { DivideLine } from "@/components/_common/Element/_DivideLine";
 
 const InGameSeason = () => {
@@ -23,7 +23,8 @@ const InGameSeason = () => {
 
       <DivideLine />
 
-      <TeamRanking />
+      <h1 style={{ textAlign: "center" }}>시즌7 준비중...</h1>
+      {/* <TeamRanking /> */}
     </Box>
   );
 };

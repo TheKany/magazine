@@ -4,10 +4,13 @@ import { BASE_IMG_URL } from "@/app/config";
 import ImageBox from "@/components/_common/Element/ImageBox";
 import React from "react";
 import styled from "styled-components";
+import FloatImg from "@/components/_common/Element/FloatImg";
+import BackBtn from "@/components/_common/Button/BackBtn";
 
 const StoryPage = () => {
   return (
-    <>
+    <Box>
+      <BackBtn />
       {/* 문단 */}
       <Text $break={false}>
         압도적인 우승을 거둔 청용열차의 시즌 5였다. <br />
@@ -17,7 +20,6 @@ const StoryPage = () => {
         <br />이 둘은 취향차이라고 했던가... <br />
         mvp는 조형준 선수의 진땀승으로 마무리 지어졌다.
       </Text>
-
       <FirstImg>
         <ImageBox
           src={`${BASE_IMG_URL}/season/s5/s5-1.png`}
@@ -26,10 +28,9 @@ const StoryPage = () => {
           height={0}
           sizes="100vw"
           style={{ width: "80%", height: "auto" }}
-          unoptimized
+          priority
         />
       </FirstImg>
-
       <TextBox>
         <QText>
           Q: 투표단원들에 과반수 이상으로 MVP에 선정되셨는데 소감 한말씀
@@ -41,7 +42,7 @@ const StoryPage = () => {
           감사드립니다 ㅎㅎ
         </Text>
       </TextBox>
-
+      ``
       {/* 문단 */}
       <TextBox>
         <QText>
@@ -54,7 +55,6 @@ const StoryPage = () => {
           동기부여가 되어 있어서, 좋은 성적을 낼 수 있었던 것 같습니다.
         </Text>
       </TextBox>
-
       {/* 문단 */}
       <TextBox>
         <QText>
@@ -70,7 +70,6 @@ const StoryPage = () => {
           잘 풀렸습니다.
         </Text>
       </TextBox>
-
       {/* 문단 */}
       <TextBox>
         <QText>
@@ -79,13 +78,12 @@ const StoryPage = () => {
         </QText>
 
         <Text $break={true}>
-          <InsideImg
-            $url={`${BASE_IMG_URL}/season/s5/s5-2.png`}
-            $way="right"
+          <FloatImg
             src={`${BASE_IMG_URL}/season/s5/s5-2.png`}
             alt="이미지2"
             width={92}
             height={203}
+            way="right"
           />
           MVP 투표권이 있었으면 <strong>상엽씨</strong>를 뽑았을 것 같습니다.
           숨은 MVP라고 하면 세면씨랑 민성 형님이 골밑에서 열심히 싸워주어서,
@@ -93,28 +91,24 @@ const StoryPage = () => {
           팀원들도 제 몫 이상을 해줬다고 생각합니다.
         </Text>
       </TextBox>
-
       {/* 문단 */}
-
       <TextBox>
         <QText>
           Q: 이번 시즌을 치루면서 가장 상대 하기 힘들었던 선수가 있다면
           누구인가요?
         </QText>
         <Text $break={false}>
-          <InsideImg
-            $url={`${BASE_IMG_URL}/season/s5/s5-4.png`}
-            $way="left"
+          <FloatImg
             src={`${BASE_IMG_URL}/season/s5/s5-4.png`}
             alt="이미지2"
+            way="left"
             width={100}
             height={150}
-            style={{ marginRight: 16 }}
+            priority
           />
           문영이 형이랑 상대하면 항상 심리전에서 지는 느낌이라 힘들었습니다.
         </Text>
       </TextBox>
-
       <TextBox>
         <QText>
           Q: 마지막으로 Am Sixers팀원들에게 하고싶은 말 부탁드립니다.
@@ -133,14 +127,18 @@ const StoryPage = () => {
           height={0}
           sizes="100vw"
           style={{ width: "100%", height: "auto" }}
-          unoptimized
+          priority
         />
       </div>
-    </>
+    </Box>
   );
 };
 
 export default StoryPage;
+
+const Box = styled.section`
+  padding: 8px;
+`;
 
 const FirstImg = styled.div`
   width: 100%;
@@ -163,10 +161,4 @@ const QText = styled.p`
   font-size: 15px;
   font-weight: 700;
   margin: 4px 0;
-`;
-
-const InsideImg = styled.img<{ $url: string; $way: string }>`
-  float: ${(props) => props.$way};
-  shape-outside: url(${(props) => props.$url});
-  shape-margin: 10px;
 `;

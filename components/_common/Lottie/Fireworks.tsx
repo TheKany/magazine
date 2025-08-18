@@ -61,5 +61,5 @@ const LottieWrapper = styled.div`
   width: 80%;
   height: 80%;
   pointer-events: none;
-  z-index: 1;
+  z-index: 9999;
 `;

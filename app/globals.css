@@ -11,53 +11,54 @@
   }
 }
 
+// 일반 글씨체
 @font-face {
-  font-family: "42dotSans";
-  src: url("/fonts/42dotSans-Regular.ttf") format("truetype");
-  font-weight: normal;
+  font-family: "Pretendard";
+  src: url("/fonts/Pretendard-Regular.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
+/* 구부렁 글씨체 */
 @font-face {
-  font-family: "42dotSans";
-  src: url("/fonts/42dotSans-Bold.ttf") format("truetype");
-  font-weight: bold;
+  font-family: "BMKkubulimTTF";
+  src:
+    url("/fonts/BMKkubulimTTF.woff2") format("woff2"),
+    url("/fonts/BMKkubulimTTF.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
-@font-face {
-  font-family: "42dotSans";
-  src: url("/fonts/42dotSans-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "42dotSans";
-  src: url("/fonts/42dotSans-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "42dotSans";
-  src: url("/fonts/42dotSans-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "42dotSans";
-  src: url("/fonts/42dotSans-ExtraBold.ttf") format("truetype");
-  font-weight: 800;
-  font-style: normal;
-}
-
+/* 동글 글씨체 */
 @font-face {
   font-family: "Jua";
-  src: url("/fonts/Jua-Regular.ttf") format("truetype");
-  font-weight: 4;
+  src:
+    url("/fonts/Jua-Regular.woff2") format("woff2"),
+    url("/fonts/Jua-Regular.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
+  font-display: swap;
+}
+
+// 공지용
+@font-face {
+  font-family: "SeoulAlrimTTF";
+  src:
+    url("/fonts/SeoulAlrimTTF-Bold.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FingerPaint";
+  src:
+    url("/fonts/FingerPaint-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 html,
@@ -66,7 +67,7 @@ body {
   max-width: 600px;
   margin: 0 auto;
   overflow-x: hidden;
-  font-family: "42dotSans", sans-serif;
+  font-family: Pretendard, sans-serif;
 }
 
 body {

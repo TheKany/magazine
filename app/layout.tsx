@@ -3,8 +3,9 @@ import { Noto_Sans_KR } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 
 import "./globals.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
+import "swiper/css";
+import "swiper/css/pagination";
 
 const notoSansKR = Noto_Sans_KR({
   subsets: ["latin"],

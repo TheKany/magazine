@@ -1,6 +1,5 @@
 "use client";
 
-import { BASE_IMG_URL } from "@/app/config";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -17,7 +16,7 @@ const TopNav = () => {
     <Container>
       <Link href={"/"} style={{ position: "relative" }}>
         <Image
-          src={`${BASE_IMG_URL}/logo/blackWin.webp`}
+          src={"/sixers.svg"}
           alt="타이틀"
           width={120}
           height={36}

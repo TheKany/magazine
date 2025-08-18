@@ -8,8 +8,8 @@ import styled from "styled-components";
 
 const PlanBanner = () => {
   const setting = {
+    centerPadding: "60px",
     slidesToShow: 1,
-    slidesToScroll: 1,
   };
   //   const [schedule, setSchedule] = useState("");
   //   const [gameType, setGameType] = useState("");
@@ -66,7 +66,6 @@ const PlanBanner = () => {
 export default PlanBanner;
 
 const PlanContainer = styled.div<{ $eventType?: string }>`
-  width: 100%;
   background-color: #ecd2d2;
   padding: 24px;
   border-radius: 4px;

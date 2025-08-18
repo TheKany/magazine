@@ -18,11 +18,7 @@ const nextConfig = {
         hostname: "sixers.s3.ap-southeast-2.amazonaws.com",
         pathname: "/**",
       },
-      {
-        protocol: "http",
-        hostname: "localhost:3000/",
-        pathname: "/**",
-      },
+      
     ],
   },
 };
