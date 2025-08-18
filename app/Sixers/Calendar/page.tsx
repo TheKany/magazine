@@ -3,7 +3,7 @@
 import { EventProp } from "@/Types/types";
 import ChevronLeft from "@/components/_common/svg/ChevronLeft";
 import ChevronRight from "@/components/_common/svg/ChevronRight";
-import seasonWeekData from "@/lib/query/seasonInfo";
+import { seasonWeekAllData } from "@/lib/query/seasonInfo";
 import dayjs from "dayjs";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
@@ -25,7 +25,7 @@ const CalendarPage = () => {
   const emptyDays = Array.from({ length: startDay }, () => null);
 
   const onLoadData = async () => {
-    const resData = await seasonWeekData();
+    const resData = await seasonWeekAllData();
     setEventDate(resData);
   };
 
@@ -40,10 +40,7 @@ const CalendarPage = () => {
   return (
     <>
       <EventDisplay>
-        <EventDate>{selectedEvent?.date}</EventDate>
-        <p>
-          {selectedEvent?.season_id !== 0 ? selectedEvent?.season_id : null}
-        </p>
+        <EventDate>{selectedEvent?.date.replace(/-/g, "/")}</EventDate>
         <EventComment>{selectedEvent?.type}</EventComment>
       </EventDisplay>
 
@@ -156,7 +153,7 @@ const Day = styled.div<{ $eventType?: string }>`
       ? "#f0e68c"
       : $eventType === "시즌 후반기"
       ? "#87cefa"
-      : $eventType === "이벤트"
+      : $eventType === "이벤트전"
       ? "#ffcccb"
       : $eventType === "프리시즌"
       ? "#98fb98"

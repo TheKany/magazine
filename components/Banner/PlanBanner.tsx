@@ -1,6 +1,6 @@
 "use client";
 
-import seasonWeekData from "@/lib/query/seasonInfo";
+import { seasonThisWeekData } from "@/lib/query/seasonInfo";
 import { EventProp } from "@/Types/types";
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
@@ -11,27 +11,13 @@ const PlanBanner = () => {
     centerPadding: "60px",
     slidesToShow: 1,
   };
-  //   const [schedule, setSchedule] = useState("");
-  //   const [gameType, setGameType] = useState("");
+
   const [planList, setPlanList] = useState<EventProp[]>([]);
   const onLoadData = async () => {
     try {
-      const resData = await seasonWeekData();
-      //   const today = new Date();
+      const resData = await seasonThisWeekData();
 
       setPlanList(resData);
-
-      //   const nextEvent = resData.find((event: EventProp) => {
-      //     const eventDate = new Date(event.date);
-      //     return eventDate >= today;
-      //   });
-
-      //   const yyyy = today.getFullYear();
-      //   const nextEventDate = nextEvent.date.replace(`${yyyy}-`, "");
-      //   const nextEventDateChangeFormat = nextEventDate.replace("-", "/");
-
-      //   setSchedule(nextEvent ? `${nextEventDateChangeFormat}` : "");
-      //   setGameType(nextEvent.type);
     } catch (error) {
       console.error("Error loading event data:", error);
     }
@@ -52,13 +38,6 @@ const PlanBanner = () => {
           </PlanInfoBox>
         </PlanContainer>
       ))}
-      {/* <PlanContainer $eventType={gameType}>
-        <p>이번주 경기 정보</p>
-        <PlanInfoBox>
-          <PlanDate>{schedule}</PlanDate>
-          <PlanText>🏀{gameType}🏀</PlanText>
-        </PlanInfoBox>
-      </PlanContainer> */}
     </Slider>
   );
 };
