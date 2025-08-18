@@ -1,29 +1,42 @@
+import { seasonTeamScore } from "@/lib/query/seasonScroe";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-// 승: 3점 | 무: 1점 | 패: 0점
-const TotalRank = () => {
-  const [teams, setTeams] = useState([
-    { color: "white", name: "리바운드", win: 2, draw: 0, lose: 8 },
-    { color: "black", name: "청용열차", win: 8, draw: 0, lose: 2 },
-    { color: "purple", name: "常勝(상승)", win: 5, draw: 0, lose: 5 },
-  ]);
+type TeamData = {
+  name: string;
+  win: number;
+  draw: number;
+  lose: number;
+  color: string;
+};
 
+// 승: 3점 | 무: 1점 | 패: 0점
+const TotalRank = ({ season }: { season: number }) => {
+  // const [teams, setTeams] = useState([
+  //   { color: "white", name: "리바운드", win: 2, draw: 0, lose: 8 },
+  //   { color: "black", name: "청용열차", win: 8, draw: 0, lose: 2 },
+  //   { color: "purple", name: "常勝(상승)", win: 5, draw: 0, lose: 5 },
+  // ]);
+
+  const [teams, setTeams] = useState<TeamData[]>([]);
   const [sorted, setSorted] = useState(false);
+  const onLoadData = async (season: number) => {
+    const resData = await seasonTeamScore({ season });
+
+    console.log(resData);
+
+    const sortedTeams = resData.sort(
+      (a, b) => getScore(b.win, b.draw) - getScore(a.win, a.draw)
+    );
+    setTeams(sortedTeams);
+    setSorted(true);
+  };
 
   const getScore = (win: number, draw: number) => win * 3 + draw;
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const sortedTeams = [...teams].sort(
-        (a, b) => getScore(b.win, b.draw) - getScore(a.win, a.draw)
-      );
-      setTeams(sortedTeams);
-      setSorted(true);
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, []);
+    onLoadData(season);
+  }, [season]);
 
   return (
     <Table>

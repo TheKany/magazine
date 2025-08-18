@@ -72,36 +72,36 @@ const BottomNav = () => {
 
         {/*
          * url: /Sixers/Contents
-         * info: 식서스 여러 기록 자료
+         * info: 식서스 즐길거리
          */}
         <MenuBox>
           <MenuBtn onClick={() => handleNavigation("/Sixers/Contents")}>
+            <Image
+              src={"/img/common/nav/nav-Contents.webp"}
+              alt="설정"
+              width={25}
+              height={25}
+            />
+            <MenuText $isActive={pathname.includes("/Sixers/Contents")}>
+              컨텐츠
+            </MenuText>
+          </MenuBtn>
+        </MenuBox>
+
+        {/*
+         * url: /Sixers/History
+         * info: 식서스 여러 기록 자료
+         */}
+        <MenuBox>
+          <MenuBtn onClick={() => handleNavigation("/Sixers/History")}>
             <Image
               src={"/img/common/nav/nav-history.webp"}
               alt="기록실"
               width={30}
               height={25}
             />
-            <MenuText $isActive={pathname.includes("/Sixers/Contents")}>
+            <MenuText $isActive={pathname.includes("/Sixers/History")}>
               기록실
-            </MenuText>
-          </MenuBtn>
-        </MenuBox>
-
-        {/*
-         * url: /Sixers/Settings
-         * info: 어플 세팅
-         */}
-        <MenuBox>
-          <MenuBtn onClick={() => handleNavigation("/Sixers/Setting")}>
-            <Image
-              src={"/img/common/nav/nav-setting.webp"}
-              alt="설정"
-              width={25}
-              height={25}
-            />
-            <MenuText $isActive={pathname.includes("/Sixers/Setting")}>
-              설정
             </MenuText>
           </MenuBtn>
         </MenuBox>
