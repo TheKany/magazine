@@ -7,29 +7,27 @@ import { Pagination, Autoplay } from "swiper/modules";
 import styled from "styled-components";
 import ImageBox from "../_common/Element/ImageBox";
 import { BASE_IMG_URL } from "@/app/config";
-import dynamic from "next/dynamic";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
-const Fireworks = dynamic(() => import("../_common/Lottie/Fireworks"), {
-  ssr: false,
-});
+// import dynamic from "next/dynamic";
+// const Fireworks = dynamic(() => import("../_common/Lottie/Fireworks"), {
+//   ssr: false,
+// });
 
 const MainImgBanner = () => {
-  const router = useRouter();
   const imgList = [
-    `${BASE_IMG_URL}/banner/season6_mvp.png`,
-    `${BASE_IMG_URL}/banner/season6_winner.png`,
+    // `${BASE_IMG_URL}/banner/season6_mvp.png`,
+    // `${BASE_IMG_URL}/banner/season6_winner.png`,
     `${BASE_IMG_URL}/banner/season7-start.png`,
+    `${BASE_IMG_URL}/season/s7/team-black.png`,
+    `${BASE_IMG_URL}/season/s7/team-purple.png`,
+    `${BASE_IMG_URL}/season/s7/team-white.png`,
   ];
 
-  const onClickLinkMvp = () => {
-    router.push("Sixers/Contents/Story/season6");
-  };
   return (
     <>
       <Box>
-        <Fireworks />
+        {/* <Fireworks /> */}
 
         <Swiper
           pagination={{
@@ -74,33 +72,13 @@ const MainImgBanner = () => {
             );
           })}
         </Swiper>
-
-        <MVPLink>
-          <button onClick={onClickLinkMvp}>🏀 MVP 인터뷰 바로가기 🏀</button>
-        </MVPLink>
+        {/* <MvpBtn /> */}
       </Box>
     </>
   );
 };
 
 export default MainImgBanner;
-
-const MVPLink = styled.div`
-  width: 100%;
-  border-radius: 16px;
-
-  position: absolute;
-  bottom: -60px;
-  left: 0;
-  background-color: #fff;
-  padding: 8px 16px;
-
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-
-  & button {
-    width: 100%;
-  }
-`;
 
 const Box = styled.section`
   position: absolute;
