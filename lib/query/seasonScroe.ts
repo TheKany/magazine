@@ -69,9 +69,7 @@ export const seasonTeamScore = async ({
     };
   }
 
-  // 머리맞대기(상대전) 득점 기록: h2hScored[A][B] = A가 B 상대로 넣은 득점 합
   const h2hScored: Record<string, Record<string, number>> = {};
-  // 전체 득점(타이 최종 보조 지표로 사용 가능)
   const totalScored: Record<string, number> = {};
 
   const ensureMaps = (name: string) => {
@@ -88,7 +86,6 @@ export const seasonTeamScore = async ({
     ensureMaps(g.team1_name);
     ensureMaps(g.team2_name);
 
-    // h2h / total 득점 누적
     h2hScored[g.team1_name][g.team2_name] =
       (h2hScored[g.team1_name][g.team2_name] ?? 0) + g.team1_total;
     h2hScored[g.team2_name][g.team1_name] =
@@ -97,9 +94,6 @@ export const seasonTeamScore = async ({
     totalScored[g.team1_name] += g.team1_total;
     totalScored[g.team2_name] += g.team2_total;
 
-    // 승/무/패 판정
-    // 1) iswinner 플래그가 상충 없이 존재하면 그것을 우선 적용
-    // 2) 아니면 스코어로 판정
     const t1Win = g.team1_iswinner && !g.team2_iswinner;
     const t2Win = g.team2_iswinner && !g.team1_iswinner;
 
@@ -117,7 +111,6 @@ export const seasonTeamScore = async ({
     }
 
     if (g.team1_total === g.team2_total) {
-      // 동시 true/동시 false/둘다 없음 → 무승부 처리
       t1.draw += 1;
       t2.draw += 1;
       t1.points += 1;
@@ -133,14 +126,12 @@ export const seasonTeamScore = async ({
     }
   }
 
-  // 포인트별 그룹화 → 그룹 내에서는 맞대결 총득점으로 재정렬
   const byPoints = new Map<number, TeamScore[]>();
   for (const row of Object.values(table)) {
     if (!byPoints.has(row.points)) byPoints.set(row.points, []);
     byPoints.get(row.points)!.push(row);
   }
 
-  // 포인트 키 내림차순으로 정렬
   const sortedPointKeys = Array.from(byPoints.keys()).sort((a, b) => b - a);
 
   const result: TeamScore[] = [];
@@ -152,10 +143,8 @@ export const seasonTeamScore = async ({
       continue;
     }
 
-    // 동률 그룹의 팀 이름 집합
     const namesInGroup = new Set(group.map((g) => g.name));
 
-    // 그룹 내 팀별 "맞대결 총득점" 계산
     const headToHeadSum: Record<string, number> = {};
     for (const name of namesInGroup) {
       const vs = h2hScored[name] ?? {};
@@ -167,10 +156,6 @@ export const seasonTeamScore = async ({
       headToHeadSum[name] = sum;
     }
 
-    // 그룹 내 정렬:
-    // 1) 맞대결 총득점 desc
-    // 2) 그래도 동률이면 전체 득점 desc (보조 지표)
-    // 3) 최종 타이브레이커: 이름 asc (안정성)
     group.sort((a, b) => {
       const h2hDiff =
         (headToHeadSum[b.name] ?? 0) - (headToHeadSum[a.name] ?? 0);

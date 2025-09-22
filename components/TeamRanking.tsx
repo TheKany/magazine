@@ -1,18 +1,31 @@
 "use client";
 
+import { seasonTeam } from "@/lib/query/seasonTeam";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-const TeamRanking = () => {
-  const [teams, setTeams] = useState([
-    { color: "white", name: "리바운드", win: 2, draw: 0, lose: 8 },
-    { color: "black", name: "청용열차", win: 8, draw: 0, lose: 2 },
-    { color: "purple", name: "常勝(상승)", win: 5, draw: 0, lose: 5 },
-  ]);
+type TeamType = {
+  id: number;
+  season_id: number;
+  color: "black" | "purplr" | "white";
+  name: string;
+  win: number;
+  draw: number;
+  lose: number;
+};
 
+const TeamRanking = () => {
+  const [teams, setTeams] = useState<TeamType[]>([]);
   const [sorted, setSorted] = useState(false);
 
   const getScore = (win: number, draw: number) => win * 3 + draw;
+
+  const onLoadData = async () => {
+    const resData = await seasonTeam();
+    setTeams(resData);
+  };
+
+  console.log("teams", teams);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -24,6 +37,10 @@ const TeamRanking = () => {
     }, 1000);
 
     return () => clearTimeout(timer);
+  }, [teams]);
+
+  useEffect(() => {
+    onLoadData();
   }, []);
 
   return (

@@ -12,12 +12,6 @@ type TeamData = {
 
 // 승: 3점 | 무: 1점 | 패: 0점
 const TotalRank = ({ season }: { season: number }) => {
-  // const [teams, setTeams] = useState([
-  //   { color: "white", name: "리바운드", win: 2, draw: 0, lose: 8 },
-  //   { color: "black", name: "청용열차", win: 8, draw: 0, lose: 2 },
-  //   { color: "purple", name: "常勝(상승)", win: 5, draw: 0, lose: 5 },
-  // ]);
-
   const [teams, setTeams] = useState<TeamData[]>([]);
   const [sorted, setSorted] = useState(false);
   const onLoadData = async (season: number) => {
