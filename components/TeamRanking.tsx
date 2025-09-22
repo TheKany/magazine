@@ -1,7 +1,7 @@
 "use client";
 
 import { seasonTeam } from "@/lib/query/seasonTeam";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 
 type TeamType = {
@@ -20,28 +20,18 @@ const TeamRanking = () => {
 
   const getScore = (win: number, draw: number) => win * 3 + draw;
 
-  const onLoadData = async () => {
+  const onLoadData = useCallback(async () => {
     const resData = await seasonTeam();
-    setTeams(resData);
-  };
-
-  console.log("teams", teams);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const sortedTeams = [...teams].sort(
-        (a, b) => getScore(b.win, b.draw) - getScore(a.win, a.draw)
-      );
-      setTeams(sortedTeams);
-      setSorted(true);
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, [teams]);
+    const sortedTeams = [...resData].sort(
+      (a, b) => getScore(b.win, b.draw) - getScore(a.win, a.draw)
+    );
+    setTeams(sortedTeams);
+    setSorted(true);
+  }, []);
 
   useEffect(() => {
     onLoadData();
-  }, []);
+  }, [onLoadData]);
 
   return (
     <Table>
