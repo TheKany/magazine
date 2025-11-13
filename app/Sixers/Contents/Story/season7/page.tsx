@@ -94,6 +94,14 @@ const StoryPage = () => {
           거 같아요. 거기에 농구는 칭찬과 격려가 아닌 비난과 욕설이 필요하다는
           저의 마인드를 이해해주는 몇몇 변태같은 팀장님들이 존재하기에 내쳐지지
           않고 상위픽에 살아남는 거 같습니다.
+          <Image
+            src={`${BASE_IMG_URL}/season/s7/s7-10.png`}
+            alt="이미지1"
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "100%", height: "auto" }}
+          />
         </Text>
         <Quote isRotate={true} />
       </TextBox>
