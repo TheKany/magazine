@@ -10,6 +10,7 @@ const Story = () => {
     <Container>
       <Box>
         <CardContainer>
+          <Card season="7" />
           <Card season="6" />
           <Card season="5" />
           <Card season="4" />

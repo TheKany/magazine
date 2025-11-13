@@ -2,6 +2,7 @@
 
 import React from "react";
 import { RuleList, RuleListItem, RuleSection, RuleText } from "./RuleUi";
+import styled from "styled-components";
 
 const LeagueRule = () => {
   return (
@@ -84,25 +85,65 @@ const LeagueRule = () => {
             진행한다.
           </RuleListItem>
           <RuleListItem>
-            아래 이유로 인해 리그전을 정상적으로 진행하지 못할 경우 해당
+            아래 각 호의 이유로 인해 리그전을 정상적으로 진행하지 못할 경우 해당
             팀(들)은 몰수표 처리를 한다.
           </RuleListItem>
-          <RuleListItem>- 해당 주차의 투표 인원이 5인 미만인 팀</RuleListItem>
-          <RuleListItem>
-            - 경기 시작 시간이 된 이후, 본인 팀 경기 차례까지 인원이 준비되지
+          <p style={{ fontSize: 14, fontWeight: 400, lineHeight: 1.5 }}>
+            1. 해당 주차의 투표 인원이 5인 미만인 팀
+          </p>
+          <p style={{ fontSize: 14, fontWeight: 400, lineHeight: 1.5 }}>
+            2. 경기 시작 시간이 된 이후, 본인 팀 경기 차례까지 인원이 준비되지
             않은 팀
+          </p>
+          <RuleListItem>
+            인원이 준비된 팀 2팀 이상일 경우 남은 팀의 리그전 경기 진행 후 남은
+            시간은 이벤트전 경기로 전환한다.
           </RuleListItem>
           <RuleListItem>
-            인원이 준비된 팀은 그렇지 않은 팀 수 만큼 승점을 가져간다.
-          </RuleListItem>
-          <RuleListItem>
-            리그전 진행이 불가능한 주차는 밸런스에 맞춰 팀을 짜고, 이벤트전을
-            진행한다.
+            인원이 준비된 팀이 1팀이라 리그전 진행이 불가능한 주차는 밸런스에
+            맞춰 팀을 짜고, 이벤트전을 진행한다.
           </RuleListItem>
           <RuleListItem>
             리그전 진행시 당일 참석자에 한하여 동등한 출전시간을 보장하도록
             한다.
           </RuleListItem>
+          <RuleListItem>
+            시즌 승률이 동률일 경우 동률일 경우 두팀간의 승자전 원칙으로 순위를
+            정한다.
+          </RuleListItem>
+        </RuleList>
+      </RuleSection>
+
+      <RuleSection title="제 6조 (출석 및 참여 의무)">
+        <RuleList>
+          <RuleListItem>
+            시즌 경기 출석률이 50퍼센트(%) 미만인 회원은 해당 시즌의 뱃지 획득
+            자격을 상실하며, 차기 시즌 팀장으로 선임될 수 없다.
+          </RuleListItem>
+          <RuleListItem>
+            시즌 중 실시되는 공식 투표에 2회 이상 참여하지 않은 회원은 차기 시즌
+            참가가 제한된다.
+          </RuleListItem>
+          <RuleListItem>
+            사전 통보 없이 경기 또는 공식 행사에 2회 이상 무단 불참한 회원은
+            차기 시즌 참가가 제한된다.
+          </RuleListItem>
+          <RuleListItem>
+            아래 각 호에 해당하는 경우, 운영진의 승인을 통해 예외로 인정할 수
+            있다.
+          </RuleListItem>
+          <p style={{ fontSize: 14, fontWeight: 400, lineHeight: 1.5 }}>
+            1. 개인의 부상, 질병 등 건강상의 사유
+          </p>
+          <p style={{ fontSize: 14, fontWeight: 400, lineHeight: 1.5 }}>
+            2. 직장 근무, 출장, 시험, 군사훈련 등 불가피한 사정
+          </p>
+          <p style={{ fontSize: 14, fontWeight: 400, lineHeight: 1.5 }}>
+            3. 천재지변, 가족의 경조사 등 불가항력적 사유
+          </p>
+          <p style={{ fontSize: 14, fontWeight: 400, lineHeight: 1.5 }}>
+            4. 그 밖에 운영진이 타당하다고 인정하는 사유
+          </p>
         </RuleList>
       </RuleSection>
 
@@ -110,38 +151,73 @@ const LeagueRule = () => {
         <RuleText>2024.06.29</RuleText>
         <RuleList>
           <RuleListItem>
-            [개정] 제 4조 2항) 팀 파울이 5개 이상이 되면 자유투를 실행한다. ➡️
-            팀 파울이 4개 이상이 되면 자유투(1구 2득점 인정)를 실행한다.
+            <Change>[개정]</Change> 제 4조 2항) 팀 파울이 5개 이상이 되면
+            자유투를 실행한다. ➡️
+            <span style={{ fontWeight: 600 }}>
+              팀 파울이 4개 이상이 되면 자유투(1구 2득점 인정)를 실행한다.
+            </span>
           </RuleListItem>
           <RuleListItem>
-            [신설] 제 4조 4항) 유파울(속공 저지 파울, 비신사적인 파울)시
-            상대편에게 자유투 1구와 공격권을 부여한다.
+            <New>[신설]</New> 제 4조 4항) 유파울(속공 저지 파울, 비신사적인
+            파울)시 상대편에게 자유투 1구와 공격권을 부여한다.
           </RuleListItem>
         </RuleList>
         <RuleText>2024.07.25</RuleText>
         <RuleList>
           <RuleListItem>
-            [신설] 제 2조 1항) 경기 시작 시간은 항상 오전 6시 진행을 기준으로
-            한다.
+            <New>[신설]</New> 제 2조 1항) 경기 시작 시간은 항상 오전 6시 진행을
+            기준으로 한다.
           </RuleListItem>
-          <RuleListItem>[신설] 제 5조) 리그전 진행 조항</RuleListItem>
+          <RuleListItem>
+            <New>[신설]</New> 제 5조) 리그전 진행 조항
+          </RuleListItem>
         </RuleList>
         <RuleText>2024.09.28</RuleText>
         <RuleList>
           <RuleListItem>
-            [신설] 제 4조 5항) 과격한 파울에 대한 경고, 퇴장조치 항목
+            <New>[신설]</New> 제 4조 5항) 과격한 파울에 대한 경고, 퇴장조치 항목
           </RuleListItem>
           <RuleListItem>
-            [신설] 제 5조 6항) 당일 참석자에 대한 동일 출전 시간 보장 항목
+            <New>[신설]</New> 제 5조 6항) 당일 참석자에 대한 동일 출전 시간 보장
+            항목
           </RuleListItem>
         </RuleList>
         <RuleText>2025.03.06</RuleText>
         <RuleList>
           <RuleListItem>
-            [신설] 제 4조 6항) 경기내 과도한 항의에 대한 조치
+            <New>[신설]</New> 제 4조 6항) 경기내 과도한 항의에 대한 조치
           </RuleListItem>
           <RuleListItem>
-            [신설] 제 4조 7항) 반복적인 사항에 대한 조치
+            <New>[신설]</New> 제 4조 7항) 반복적인 사항에 대한 조치
+          </RuleListItem>
+        </RuleList>
+        <RuleText>2025.11.13</RuleText>
+        <RuleList>
+          <RuleListItem>
+            <New>[신설]</New> 제 6조) 출석 및 참여 의무
+          </RuleListItem>
+          <RuleListItem>
+            <Change>[개정]</Change> 제 5조 4항)
+            <span style={{ textDecoration: "line-through" }}>
+              인원이 준비된 팀은 그렇지 않은 팀 수 만큼 승점을 가져간다.
+            </span>
+            ➡️
+            <span style={{ fontWeight: 600 }}>
+              인원이 준비된 팀 2팀 이상일 경우 남은 팀의 리그전 경기 진행 후
+              남은 시간은 이벤트전 경기로 전환한다.
+            </span>
+          </RuleListItem>
+          <RuleListItem>
+            <Change>[개정]</Change> 제 5조 5항) 리그전 진행이 불가능한 주차는
+            밸런스에 맞춰 팀을 짜고, 이벤트전을 진행한다. ➡️{" "}
+            <span style={{ fontWeight: 600 }}>
+              인원이 준비된 팀이 1팀이라 리그전 진행이 불가능한 주차는 밸런스에
+              맞춰 팀을 짜고, 이벤트전을 진행한다.
+            </span>
+          </RuleListItem>
+          <RuleListItem>
+            <New>[신설]</New> 제 5조 7항) 시즌 승률이 동률일 경우 동률일 경우
+            두팀간의 승자전 원칙으로 순위를 정한다.
           </RuleListItem>
         </RuleList>
       </RuleSection>
@@ -150,3 +226,15 @@ const LeagueRule = () => {
 };
 
 export default LeagueRule;
+
+const New = styled.span`
+  font-weight: 600;
+  background-color: #dbd056;
+  color: #121212;
+`;
+
+const Change = styled.span`
+  font-weight: 600;
+  background-color: #d56767;
+  color: #121212;
+`;

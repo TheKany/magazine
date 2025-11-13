@@ -2,7 +2,6 @@
 
 import GroupRule from "@/components/GroupRule";
 import LeagueRule from "@/components/LeagueRule";
-import BackBtn from "@/components/_common/Button/BackBtn";
 import Container from "@/components/_common/Element/_Container";
 import React, { useState } from "react";
 import styled from "styled-components";
@@ -14,22 +13,27 @@ const RulePage = () => {
   };
   return (
     <Container>
-      <BackBtn />
-      <ButtonContainer>
-        <MenuButton onClick={() => onClickMenu(1)} $active={menu === 1}>
-          회칙
-        </MenuButton>
-        <MenuButton onClick={() => onClickMenu(2)} $active={menu === 2}>
-          리그 규칙
-        </MenuButton>
-      </ButtonContainer>
+      <Box>
+        <ButtonContainer>
+          <MenuButton onClick={() => onClickMenu(1)} $active={menu === 1}>
+            회칙
+          </MenuButton>
+          <MenuButton onClick={() => onClickMenu(2)} $active={menu === 2}>
+            리그 규칙
+          </MenuButton>
+        </ButtonContainer>
 
-      {menu === 1 ? <GroupRule /> : <LeagueRule />}
+        {menu === 1 ? <GroupRule /> : <LeagueRule />}
+      </Box>
     </Container>
   );
 };
 
 export default RulePage;
+
+const Box = styled.div`
+  padding: 0 16px;
+`;
 
 const ButtonContainer = styled.div`
   display: grid;
