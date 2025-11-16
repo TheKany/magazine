@@ -3,6 +3,7 @@
 import Container from "@/components/_common/Element/_Container";
 import { DivideLine } from "@/components/_common/Element/_DivideLine";
 import Wrapper from "@/components/_common/Element/_Wrapper";
+import Schedule from "@/components/pages/main/schedule";
 // import ImageBox from "@/components/_common/Element/ImageBox";
 // import MainImgBanner from "@/components/Banner/MainImgBanner";
 import { seasonThisWeekData } from "@/lib/query/seasonInfo";
@@ -30,7 +31,7 @@ export default function Home() {
 
     setWeekPlan(changeData);
   };
-
+  console.log(weekPlan);
   const onClickIngameSeason = () => {
     // router.push("Sixers/InGameSeason");
     alert("시즌 준비 중..");
@@ -61,11 +62,7 @@ export default function Home() {
         </Box>
 
         {/* 일정  */}
-        <Title>이번주 일정?</Title>
-        <PlanBox>
-          <span>{weekPlan?.date}</span>
-          <span>{weekPlan?.type}</span>
-        </PlanBox>
+        <Schedule />
 
         <DivideLine />
 
@@ -77,7 +74,7 @@ export default function Home() {
 
         {/* 메뉴들 */}
         {/* 이거 메뉴버튼 컴포넌트화 시켜야함 */}
-        <MenuBox>
+        {/* <MenuBox>
           <MenuBtn onClick={() => router.push("/Sixers/Information/Notice")}>
             공지사항
           </MenuBtn>
@@ -90,7 +87,7 @@ export default function Home() {
           <MenuBtn onClick={() => router.push("/Sixers/Contents/Story")}>
             식서스 매거진
           </MenuBtn>
-        </MenuBox>
+        </MenuBox> */}
       </Wrapper>
     </Container>
   );
@@ -104,19 +101,6 @@ const Title = styled.p`
   font-size: 16px;
   font-family: "jua";
   margin: 16px;
-`;
-
-const PlanBox = styled.section`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-
-  & span {
-    font-size: 24px;
-    font-family: "SeoulAlrimTTF";
-    font-weight: 900;
-  }
 `;
 
 const BtnBox = styled.section`
