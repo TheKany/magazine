@@ -3,9 +3,9 @@
 import Container from "@/components/_common/Element/_Container";
 import { DivideLine } from "@/components/_common/Element/_DivideLine";
 import Wrapper from "@/components/_common/Element/_Wrapper";
-import Schedule from "@/components/pages/main/schedule";
+import Schedule from "@/components/pages/main/Schedule";
 // import ImageBox from "@/components/_common/Element/ImageBox";
-// import MainImgBanner from "@/components/Banner/MainImgBanner";
+import MainImgBanner from "@/components/Banner/MainImgBanner";
 import { seasonThisWeekData } from "@/lib/query/seasonInfo";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -31,11 +31,6 @@ export default function Home() {
 
     setWeekPlan(changeData);
   };
-  console.log(weekPlan);
-  const onClickIngameSeason = () => {
-    // router.push("Sixers/InGameSeason");
-    alert("시즌 준비 중..");
-  };
 
   useEffect(() => {
     onLoadData();
@@ -58,7 +53,7 @@ export default function Home() {
             priority
             unoptimized
           /> */}
-          {/* <MainImgBanner /> */}
+          <MainImgBanner />
         </Box>
 
         {/* 일정  */}
@@ -66,11 +61,6 @@ export default function Home() {
 
         <DivideLine />
 
-        <BtnBox>
-          <SeasonButton onClick={onClickIngameSeason}>
-            Play Season 8
-          </SeasonButton>
-        </BtnBox>
 
         {/* 메뉴들 */}
         {/* 이거 메뉴버튼 컴포넌트화 시켜야함 */}
@@ -101,25 +91,6 @@ const Title = styled.p`
   font-size: 16px;
   font-family: "jua";
   margin: 16px;
-`;
-
-const BtnBox = styled.section`
-  width: 100%;
-  height: 80px;
-  max-width: 320px;
-  margin: 0 auto;
-  margin-bottom: 32px;
-`;
-
-const SeasonButton = styled.button`
-  font-size: 24px;
-  font-family: "FingerPaint";
-  color: #fff;
-  background-color: #492a8d;
-  border-radius: 25px;
-  width: 100%;
-  height: 100%;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
 const MenuBox = styled.div`
