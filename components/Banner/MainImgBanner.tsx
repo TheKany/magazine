@@ -16,12 +16,7 @@ import Link from "next/link";
 
 const MainImgBanner = () => {
   const imgList = [
-    // `${BASE_IMG_URL}/banner/season6_mvp.png`,
-    // `${BASE_IMG_URL}/banner/season6_winner.png`,
     `${BASE_IMG_URL}/banner/season7-start.png`,
-    `${BASE_IMG_URL}/season/s7/team-black.png`,
-    `${BASE_IMG_URL}/season/s7/team-purple.png`,
-    `${BASE_IMG_URL}/season/s7/team-white.png`,
   ];
 
   return (
@@ -81,17 +76,9 @@ const MainImgBanner = () => {
 export default MainImgBanner;
 
 const Box = styled.section`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 90%;
+  width: 100%;
   height: 280px;
   border-radius: 8px;
-  background: rgba(235, 235, 235, 0.6);
-  backdrop-filter: blur(2px);
-  padding: 16px;
 `;
 
 const ImgWrapper = styled.div`
