@@ -57,10 +57,8 @@ export default function Home() {
         </Box>
 
         {/* 일정  */}
+        {/* props 타입들 수정해야함. */}
         <Schedule />
-
-        <DivideLine />
-
 
         {/* 메뉴들 */}
         {/* 이거 메뉴버튼 컴포넌트화 시켜야함 */}
