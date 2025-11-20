@@ -76,10 +76,24 @@ export default function Home() {
             식서스 매거진
           </MenuBtn>
         </MenuBox> */}
+
+      {/* 5 * 7의 표를 만들어서 벤또 디자인으로 ㄱㄱ */}
+        <NavContainer>
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+        </NavContainer>
       </Wrapper>
     </Container>
   );
 }
+
+const NavContainer = styled.div`
+  display: grid;
+  padding: 16px;
+`
 
 const Box = styled.div`
   position: relative;
